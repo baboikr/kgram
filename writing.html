@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOPIK II 쓰기 54번 모범 답안 | Model Essays</title>
+  <meta name="description" content="TOPIK II Writing Task 54 model essays with highlighted keywords, structure analysis, and practice tools.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-primary: #f5f0e8;
+      --bg-secondary: #ede6d8;
+      --bg-card: #faf7f2;
+      --bg-row-hover: #f0ebe0;
+      --bg-input: #fff;
+      --border-color: #d4c9b5;
+      --border-accent: #bfb19a;
+      --text-primary: #2c2416;
+      --text-secondary: #5a4e3c;
+      --text-muted: #8a7e6b;
+      --accent-blue: #4a6f8a;
+      --accent-purple: #6b5b8a;
+      --accent-pink: #96576b;
+      --accent-emerald: #4a7a5c;
+      --accent-amber: #8a6d2f;
+      --accent-rose: #8a4040;
+      --accent-intro: #4a6f8a;
+      --accent-body: #8a6d2f;
+      --accent-conclusion: #4a7a5c;
+      --shadow-soft: 0 2px 12px rgba(80, 60, 30, 0.08);
+      --radius-sm: 4px;
+      --radius-md: 6px;
+      --radius-lg: 8px;
+    }
+
+    body {
+      font-family: 'Lora', 'Noto Serif KR', 'Noto Sans KR', Georgia, serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+      background-image: repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(180,165,140,0.07) 28px, rgba(180,165,140,0.07) 29px);
+    }
+
+    /* ── Header ── */
+    .header {
+      padding: 48px 32px 28px;
+      text-align: center;
+      position: relative;
+    }
+    .header::after {
+      content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 60%; max-width: 400px; height: 2px; background: var(--border-accent);
+    }
+    .header::before {
+      content: '◆'; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%);
+      font-size: 0.7rem; color: var(--border-accent); background: var(--bg-primary); padding: 0 10px; z-index: 1;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px; padding: 5px 14px;
+      background: transparent; border: 1.5px solid var(--accent-amber); border-radius: 2px;
+      font-size: 0.72rem; font-weight: 600; color: var(--accent-amber);
+      letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 18px;
+      font-family: 'Crimson Text', serif; animation: fadeInDown 0.6s ease;
+    }
+    .badge::before { content: '✦'; font-size: 0.65rem; }
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; color: var(--text-primary);
+      margin-bottom: 12px; letter-spacing: -0.01em;
+      font-family: 'Crimson Text', 'Noto Serif KR', Georgia, serif;
+      animation: fadeInDown 0.6s ease 0.1s both;
+    }
+    .subtitle {
+      font-size: 0.95rem; color: var(--text-secondary); font-weight: 400;
+      max-width: 600px; margin: 0 auto; font-style: italic;
+      animation: fadeInDown 0.6s ease 0.2s both;
+    }
+    .nav-link {
+      display: inline-block; margin-top: 14px; font-size: 0.8rem;
+      color: var(--accent-amber); text-decoration: none; font-family: 'Crimson Text', serif;
+      letter-spacing: 0.05em; border-bottom: 1px solid transparent; transition: border-color 0.2s;
+    }
+    .nav-link:hover { border-bottom-color: var(--accent-amber); }
+
+    /* ── Controls ── */
+    .controls {
+      display: flex; flex-wrap: wrap; gap: 12px; padding: 28px 32px 20px;
+      max-width: 900px; margin: 0 auto; align-items: center; justify-content: center;
+      animation: fadeInUp 0.6s ease 0.3s both;
+    }
+    .toggle-btn {
+      padding: 8px 20px; background: var(--text-primary); border: 1.5px solid var(--text-primary);
+      border-radius: 2px; color: var(--bg-card); font-size: 0.8rem;
+      font-family: 'Crimson Text', serif; font-weight: 600; cursor: pointer;
+      letter-spacing: 0.05em; transition: all 0.2s;
+    }
+    .toggle-btn:hover { background: var(--accent-amber); border-color: var(--accent-amber); }
+    .toggle-btn.active { background: var(--accent-rose); border-color: var(--accent-rose); }
+    .toggle-btn.outline {
+      background: transparent; color: var(--text-secondary); border-color: var(--border-color);
+    }
+    .toggle-btn.outline:hover { border-color: var(--accent-amber); color: var(--accent-amber); }
+    .toggle-btn.outline.active {
+      background: var(--text-primary); border-color: var(--text-primary); color: var(--bg-card);
+    }
+
+    /* ── Template Bank ── */
+    .template-bank {
+      max-width: 900px; margin: 0 auto 24px; padding: 0 32px;
+      animation: fadeInUp 0.6s ease 0.35s both;
+    }
+    .template-toggle {
+      width: 100%; padding: 14px 20px; background: var(--bg-card);
+      border: 1.5px solid var(--border-color); border-radius: var(--radius-md);
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Crimson Text', serif; font-size: 0.85rem; font-weight: 700;
+      color: var(--text-primary); letter-spacing: 0.05em; text-transform: uppercase;
+      transition: all 0.2s;
+    }
+    .template-toggle:hover { border-color: var(--accent-amber); }
+    .template-toggle .arrow { transition: transform 0.3s; font-size: 0.7rem; }
+    .template-toggle.open .arrow { transform: rotate(180deg); }
+    .template-content {
+      display: none; background: var(--bg-card); border: 1.5px solid var(--border-color);
+      border-top: none; border-radius: 0 0 var(--radius-md) var(--radius-md);
+      padding: 20px 24px; margin-top: -2px;
+    }
+    .template-content.show { display: block; }
+    .tmpl-section { margin-bottom: 18px; }
+    .tmpl-section:last-child { margin-bottom: 0; }
+    .tmpl-section h3 {
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--text-muted); margin-bottom: 8px; font-family: 'Crimson Text', serif;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .tmpl-section h3 .dot {
+      width: 8px; height: 8px; border-radius: 50%; display: inline-block;
+    }
+    .tmpl-section h3 .dot.intro { background: var(--accent-intro); }
+    .tmpl-section h3 .dot.body { background: var(--accent-body); }
+    .tmpl-section h3 .dot.conclusion { background: var(--accent-conclusion); }
+    .tmpl-item {
+      padding: 8px 14px; margin-bottom: 6px; background: rgba(138,109,47,0.04);
+      border-left: 3px solid var(--border-color); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.85rem; line-height: 1.6;
+    }
+    .tmpl-item .ko { font-family: 'Noto Serif KR', serif; color: var(--text-primary); margin-bottom: 2px; }
+    .tmpl-item .en { font-size: 0.76rem; color: var(--text-muted); font-style: italic; font-family: 'Crimson Text', serif; }
+    .tmpl-item.intro { border-left-color: var(--accent-intro); }
+    .tmpl-item.body { border-left-color: var(--accent-body); }
+    .tmpl-item.conclusion { border-left-color: var(--accent-conclusion); }
+
+    /* ── Essay Cards ── */
+    .essays-container {
+      max-width: 900px; margin: 0 auto; padding: 0 32px 60px;
+    }
+    .essay-card {
+      background: var(--bg-card); border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md); margin-bottom: 24px; overflow: hidden;
+      box-shadow: var(--shadow-soft); animation: fadeInUp 0.4s ease both;
+    }
+    .essay-header {
+      padding: 20px 24px; border-bottom: 1px solid var(--border-color);
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .essay-header:hover { background: var(--bg-row-hover); }
+    .essay-meta {
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+    .exam-badge {
+      padding: 2px 10px; background: rgba(74,111,138,0.1); color: var(--accent-blue);
+      font-size: 0.68rem; font-weight: 700; font-family: 'Crimson Text', serif;
+      letter-spacing: 0.08em; text-transform: uppercase; border-radius: 2px;
+      white-space: nowrap;
+    }
+    .essay-topic {
+      font-size: 1.15rem; font-weight: 700; font-family: 'Noto Serif KR', serif;
+      color: var(--text-primary); line-height: 1.4;
+    }
+    .essay-topic-en {
+      font-size: 0.78rem; color: var(--text-muted); font-style: italic;
+      font-family: 'Crimson Text', serif; margin-top: 2px;
+    }
+    .expand-icon {
+      font-size: 0.8rem; color: var(--text-muted); transition: transform 0.3s;
+      flex-shrink: 0; margin-top: 4px;
+    }
+    .essay-card.open .expand-icon { transform: rotate(180deg); }
+
+    .essay-body { display: none; }
+    .essay-card.open .essay-body { display: block; }
+
+    /* Questions */
+    .questions {
+      padding: 18px 24px; background: var(--bg-secondary); border-bottom: 1px solid var(--border-color);
+    }
+    .questions-title {
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--text-muted); margin-bottom: 10px; font-family: 'Crimson Text', serif;
+    }
+    .question-item {
+      display: flex; gap: 10px; margin-bottom: 8px; font-size: 0.88rem; line-height: 1.6;
+    }
+    .question-item:last-child { margin-bottom: 0; }
+    .q-num {
+      font-weight: 700; color: var(--accent-amber); font-family: 'Crimson Text', serif;
+      flex-shrink: 0; font-size: 0.82rem;
+    }
+    .q-text .ko { font-family: 'Noto Serif KR', serif; }
+    .q-text .en { font-size: 0.76rem; color: var(--text-muted); font-style: italic; font-family: 'Crimson Text', serif; }
+
+    /* Essay content */
+    .essay-content {
+      padding: 24px; transition: opacity 0.3s;
+    }
+    .essay-content.hidden {
+      position: relative;
+    }
+    .essay-content.hidden .essay-text-area {
+      filter: blur(8px); user-select: none; pointer-events: none;
+    }
+    .essay-content.hidden .reveal-overlay {
+      display: flex;
+    }
+    .reveal-overlay {
+      display: none; position: absolute; inset: 0; background: rgba(245,240,232,0.7);
+      align-items: center; justify-content: center; z-index: 5;
+      backdrop-filter: blur(2px);
+    }
+    .reveal-btn {
+      padding: 12px 28px; background: var(--text-primary); color: var(--bg-card);
+      border: none; border-radius: var(--radius-sm); font-family: 'Crimson Text', serif;
+      font-size: 0.9rem; font-weight: 600; cursor: pointer; letter-spacing: 0.05em;
+      transition: background 0.2s;
+    }
+    .reveal-btn:hover { background: var(--accent-amber); }
+
+    .essay-section {
+      margin-bottom: 16px; padding-left: 18px; position: relative;
+    }
+    .essay-section:last-child { margin-bottom: 0; }
+    .essay-section::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+      border-radius: 2px;
+    }
+    .essay-section.intro::before { background: var(--accent-intro); }
+    .essay-section.body::before { background: var(--accent-body); }
+    .essay-section.conclusion::before { background: var(--accent-conclusion); }
+
+    .section-label {
+      display: inline-block; font-size: 0.6rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; padding: 1px 8px; border-radius: 2px; margin-bottom: 6px;
+      font-family: 'Crimson Text', serif;
+    }
+    .intro .section-label { background: rgba(74,111,138,0.1); color: var(--accent-intro); }
+    .body .section-label { background: rgba(138,109,47,0.1); color: var(--accent-body); }
+    .conclusion .section-label { background: rgba(74,122,92,0.1); color: var(--accent-conclusion); }
+
+    .essay-text {
+      font-family: 'Noto Serif KR', 'Noto Sans KR', serif;
+      font-size: 0.92rem; line-height: 1.85; color: var(--text-primary);
+      text-align: justify; word-break: keep-all;
+    }
+
+    /* Keywords */
+    .kw {
+      position: relative; color: var(--accent-rose); font-weight: 600;
+      cursor: help; border-bottom: 1.5px dotted rgba(138,64,64,0.4);
+      transition: color 0.2s;
+    }
+    .kw:hover { color: #6a2020; }
+    .kw .tooltip {
+      visibility: hidden; opacity: 0;
+      position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%);
+      background: var(--text-primary); color: var(--bg-card);
+      padding: 5px 12px; border-radius: var(--radius-sm);
+      font-size: 0.72rem; font-family: 'Crimson Text', serif; font-weight: 400;
+      white-space: nowrap; z-index: 100; pointer-events: none;
+      transition: opacity 0.2s, visibility 0.2s; font-style: italic;
+    }
+    .kw .tooltip::after {
+      content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      border: 5px solid transparent; border-top-color: var(--text-primary);
+    }
+    .kw:hover .tooltip { visibility: visible; opacity: 1; }
+
+    /* Grammar tags */
+    .grammar-tags {
+      padding: 14px 24px; border-top: 1px solid var(--border-color);
+      display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+    }
+    .grammar-tags-label {
+      font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--text-muted); font-family: 'Crimson Text', serif; margin-right: 4px;
+    }
+    .grammar-tag {
+      display: inline-block; padding: 2px 8px; background: rgba(107,91,138,0.08);
+      border: 1px solid rgba(107,91,138,0.2); border-radius: 2px;
+      font-size: 0.72rem; color: var(--accent-purple);
+      font-family: 'Noto Sans KR', sans-serif; white-space: nowrap;
+    }
+    .char-count {
+      margin-left: auto; font-size: 0.7rem; color: var(--text-muted);
+      font-family: 'Crimson Text', serif; font-style: italic;
+    }
+
+    /* ── Writing Pad ── */
+    .writing-pad {
+      max-width: 900px; margin: 0 auto 60px; padding: 0 32px;
+    }
+    .pad-card {
+      background: var(--bg-card); border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-soft);
+    }
+    .pad-header {
+      padding: 16px 24px; border-bottom: 1px solid var(--border-color);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .pad-title {
+      font-size: 0.85rem; font-weight: 700; font-family: 'Crimson Text', serif;
+      letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-primary);
+    }
+    .pad-counter {
+      font-size: 0.82rem; font-family: 'Noto Sans KR', sans-serif;
+      color: var(--text-muted);
+    }
+    .pad-counter .count { font-weight: 700; color: var(--text-primary); font-size: 1rem; }
+    .pad-counter .count.warn { color: var(--accent-amber); }
+    .pad-counter .count.good { color: var(--accent-emerald); }
+    .pad-counter .count.over { color: var(--accent-rose); }
+    .pad-textarea {
+      width: 100%; min-height: 280px; padding: 20px 24px; border: none;
+      font-family: 'Noto Serif KR', 'Noto Sans KR', serif; font-size: 0.95rem;
+      line-height: 1.85; color: var(--text-primary); background: transparent;
+      resize: vertical; outline: none;
+    }
+    .pad-textarea::placeholder { color: var(--text-muted); font-style: italic; }
+    .pad-footer {
+      padding: 12px 24px; border-top: 1px solid var(--border-color);
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.75rem; color: var(--text-muted); font-style: italic;
+      font-family: 'Crimson Text', serif;
+    }
+    .clear-btn {
+      padding: 4px 14px; background: transparent; border: 1px solid var(--border-color);
+      border-radius: 2px; color: var(--text-muted); font-size: 0.72rem;
+      font-family: 'Crimson Text', serif; cursor: pointer; transition: all 0.2s;
+    }
+    .clear-btn:hover { border-color: var(--accent-rose); color: var(--accent-rose); }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center; padding: 24px 32px 40px; color: var(--text-muted);
+      font-size: 0.78rem; font-style: italic; font-family: 'Crimson Text', serif;
+    }
+    .footer a { color: var(--accent-amber); text-decoration: none; }
+
+    /* ── Animations ── */
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .header { padding: 28px 16px 22px; }
+      .controls { padding: 16px; }
+      .template-bank, .essays-container, .writing-pad { padding-left: 12px; padding-right: 12px; }
+      .essay-header { padding: 16px; flex-wrap: wrap; }
+      .questions { padding: 14px 16px; }
+      .essay-content { padding: 18px 16px; }
+      .grammar-tags { padding: 12px 16px; }
+      .essay-topic { font-size: 1.05rem; }
+      .kw .tooltip { font-size: 0.68rem; max-width: 200px; white-space: normal; text-align: center; }
+      .template-content { padding: 16px; }
+      .pad-header { flex-direction: column; gap: 8px; align-items: flex-start; }
+    }
+    @media (max-width: 400px) {
+      .header { padding: 22px 12px 18px; }
+      .controls { padding: 12px; gap: 8px; }
+      .template-bank, .essays-container, .writing-pad { padding-left: 8px; padding-right: 8px; }
+      .essay-section { padding-left: 14px; }
+      .toggle-btn { padding: 6px 14px; font-size: 0.72rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="badge">TOPIK II 쓰기 54번</div>
+    <h1>Model Essays &amp; Practice</h1>
+    <p class="subtitle">최근 기출 주제의 모범 답안과 핵심 표현을 분석합니다<br>Analyze model essays with highlighted keywords and reusable templates</p>
+    <a href="index.html" class="nav-link">← Grammar Reference</a>
+  </header>
+
+  <!-- Controls -->
+  <div class="controls">
+    <button class="toggle-btn" id="practiceToggle" onclick="togglePracticeMode()">👁 Practice Mode: OFF</button>
+    <button class="toggle-btn outline" id="expandAll" onclick="toggleExpandAll()">Expand All</button>
+  </div>
+
+  <!-- Template Bank -->
+  <div class="template-bank">
+    <button class="template-toggle" id="tmplToggle" onclick="toggleTemplates()">
+      <span>✦ Reusable Essay Templates — 만능 템플릿</span>
+      <span class="arrow">▼</span>
+    </button>
+    <div class="template-content" id="tmplContent">
+      <div class="tmpl-section">
+        <h3><span class="dot intro"></span> 서론 — Introduction</h3>
+        <div class="tmpl-item intro">
+          <div class="ko">최근 ~에 대한 관심이 높아지고 있다.</div>
+          <div class="en">Recently, interest in ~ has been increasing.</div>
+        </div>
+        <div class="tmpl-item intro">
+          <div class="ko">~은/는 현대 사회에서 중요한 문제로 대두되고 있다.</div>
+          <div class="en">~ has emerged as an important issue in modern society.</div>
+        </div>
+        <div class="tmpl-item intro">
+          <div class="ko">~의 중요성이 날로 커지고 있는 가운데, 이에 대해 살펴보고자 한다.</div>
+          <div class="en">As the importance of ~ grows day by day, I would like to examine this topic.</div>
+        </div>
+        <div class="tmpl-item intro">
+          <div class="ko">~은/는 ~에 큰 영향을 미치므로 깊이 생각해 볼 필요가 있다.</div>
+          <div class="en">Since ~ has a significant impact on ~, it is necessary to think deeply about it.</div>
+        </div>
+      </div>
+      <div class="tmpl-section">
+        <h3><span class="dot body"></span> 본론 — Body</h3>
+        <div class="tmpl-item body">
+          <div class="ko">~의 가장 큰 이유/원인은 ~기 때문이다.</div>
+          <div class="en">The biggest reason/cause of ~ is because ~.</div>
+        </div>
+        <div class="tmpl-item body">
+          <div class="ko">이에 대한 예로 ~을/를 들 수 있다.</div>
+          <div class="en">As an example of this, we can cite ~.</div>
+        </div>
+        <div class="tmpl-item body">
+          <div class="ko">그러나 ~만 강조하면/중시하면 문제가 발생할 수 있다.</div>
+          <div class="en">However, if only ~ is emphasized, problems can arise.</div>
+        </div>
+        <div class="tmpl-item body">
+          <div class="ko">또한 ~뿐만 아니라 ~도 고려해야 한다.</div>
+          <div class="en">Furthermore, not only ~ but also ~ must be considered.</div>
+        </div>
+        <div class="tmpl-item body">
+          <div class="ko">첫째, … 둘째, … 마지막으로, …</div>
+          <div class="en">First, … Second, … Lastly, …</div>
+        </div>
+      </div>
+      <div class="tmpl-section">
+        <h3><span class="dot conclusion"></span> 결론 — Conclusion</h3>
+        <div class="tmpl-item conclusion">
+          <div class="ko">결론적으로, ~이/가 필요하다고 할 수 있다.</div>
+          <div class="en">In conclusion, it can be said that ~ is necessary.</div>
+        </div>
+        <div class="tmpl-item conclusion">
+          <div class="ko">이를 위해 개인과 사회 모두의 노력이 필요할 것이다.</div>
+          <div class="en">For this, efforts from both individuals and society will be needed.</div>
+        </div>
+        <div class="tmpl-item conclusion">
+          <div class="ko">~을/를 위한 제도적 노력과 개인의 의식 변화가 함께 이루어져야 할 것이다.</div>
+          <div class="en">Institutional efforts and changes in individual awareness for ~ must go hand in hand.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Essays -->
+  <div class="essays-container" id="essaysContainer"></div>
+
+  <!-- Writing Pad -->
+  <div class="writing-pad">
+    <div class="pad-card">
+      <div class="pad-header">
+        <div class="pad-title">✍ Practice Writing Pad — 연습장</div>
+        <div class="pad-counter"><span class="count" id="charCount">0</span> / 600–700자</div>
+      </div>
+      <textarea class="pad-textarea" id="writingPad" placeholder="여기에 에세이를 연습해 보세요...&#10;Practice your essay here...&#10;&#10;Tip: Pick a topic above, hide the model answer, then write your own version!"></textarea>
+      <div class="pad-footer">
+        <span>TOPIK II 54번: 600–700자 required</span>
+        <button class="clear-btn" onclick="document.getElementById('writingPad').value=''; updateCharCount();">Clear</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>TOPIK II 쓰기 54번 모범 답안 &copy; 2026 &mdash; <a href="index.html">Grammar Reference</a> | Happy Studying! 🇰🇷</p>
+  </footer>
+
+  <script>
+    // ── Essay Data ──
+    const essayData = [
+      {
+        exam: "98", year: "2025",
+        topic: "올바른 격려와 응원", topicEn: "Proper Encouragement & Support",
+        questions: [
+          { ko: "사람들은 언제 격려와 응원을 하는가?", en: "When do people encourage and support others?" },
+          { ko: "도움이 되지 않는 격려와 응원은 어떤 것인가?", en: "What kind of encouragement is unhelpful?" },
+          { ko: "올바른 격려와 응원의 방법은 무엇인가?", en: "What is the right way to encourage and support?" }
+        ],
+        sections: [
+          {
+            type: "intro", label: "서론",
+            text: `사람들은 살아가면서 다양한 <span class="kw">어려움<span class="tooltip">difficulty</span></span>에 <span class="kw">직면하게 된다<span class="tooltip">come to face</span></span>. 이러한 상황에서 주변 사람들의 <span class="kw">격려<span class="tooltip">encouragement</span></span>와 응원은 큰 힘이 될 수 있다. 격려는 단순한 말이 아니라 상대방에게 용기와 <span class="kw">동기를 부여하는<span class="tooltip">to motivate</span></span> 중요한 행위이다. 그렇다면 올바른 격려와 응원은 어떠해야 하는지 살펴보고자 한다.`
+          },
+          {
+            type: "body", label: "본론 1",
+            text: `우리는 주로 타인이 <span class="kw">시련<span class="tooltip">ordeal, trial</span></span>을 겪거나 새로운 도전을 시작할 때 격려와 응원을 한다. 예를 들어 시험을 준비하는 학생이나 새 직장에 <span class="kw">적응하는<span class="tooltip">to adapt</span></span> 동료에게 따뜻한 말 한마디는 <span class="kw">자신감<span class="tooltip">confidence</span></span>을 높이는 데 큰 역할을 한다. 또한 실패를 경험한 사람에게 격려는 다시 일어설 수 있는 힘을 준다. 이처럼 격려는 타인의 <span class="kw">성장<span class="tooltip">growth</span></span>을 돕는 소중한 행위이다.`
+          },
+          {
+            type: "body", label: "본론 2",
+            text: `그러나 모든 격려가 반드시 도움이 되는 것은 아니다. <span class="kw">막연한<span class="tooltip">vague, uncertain</span></span> 응원은 <span class="kw">오히려<span class="tooltip">rather, on the contrary</span></span> 부담을 줄 수 있다. 또한 상대방의 상황을 충분히 이해하지 못한 채 하는 조언은 <span class="kw">공감 능력<span class="tooltip">empathy</span></span>이 부족하다는 인상을 줄 수 있으며, 때로는 상대의 감정을 <span class="kw">무시하는<span class="tooltip">to ignore</span></span> 결과를 <span class="kw">초래하기도<span class="tooltip">to bring about</span></span> 한다. 예를 들어 "힘내"라는 말이 오히려 <span class="kw">압박감<span class="tooltip">pressure</span></span>을 주는 경우도 있다.`
+          },
+          {
+            type: "conclusion", label: "결론",
+            text: `<span class="kw">따라서<span class="tooltip">therefore</span></span> 올바른 격려를 위해서는 먼저 상대방의 감정을 이해하고 공감하는 자세가 필요하다. <span class="kw">구체적인<span class="tooltip">specific, concrete</span></span> 노력을 인정하고 칭찬하는 것이 효과적이며, 적절한 시기에 격려하는 것이 중요하다. <span class="kw">결론적으로<span class="tooltip">in conclusion</span></span> 진정한 격려란 상대방의 <span class="kw">입장<span class="tooltip">position, standpoint</span></span>에서 생각하며 진심을 담아 전하는 것이라고 할 수 있다.`
+          }
+        ],
+        grammars: ["-게 되다", "오히려", "-기도 하다", "따라서", "결론적으로", "-(으)ㄹ 수 있다"]
+      },
+      {
+        exam: "97", year: "2024",
+        topic: "차별 문제와 해결책", topicEn: "Discrimination & Solutions",
+        questions: [
+          { ko: "우리 사회에는 어떤 종류의 차별이 존재하는가?", en: "What kinds of discrimination exist in our society?" },
+          { ko: "차별로 인해 발생하는 사회 문제는 무엇인가?", en: "What social problems arise from discrimination?" },
+          { ko: "차별을 극복하기 위한 방법은 무엇인가?", en: "How can we overcome discrimination?" }
+        ],
+        sections: [
+          {
+            type: "intro", label: "서론",
+            text: `현대 사회에서는 다양한 형태의 <span class="kw">차별<span class="tooltip">discrimination</span></span>이 존재하며 이는 심각한 사회 문제로 인식되고 있다. 차별은 개인의 <span class="kw">존엄성<span class="tooltip">dignity</span></span>을 침해할 <span class="kw">뿐만 아니라<span class="tooltip">not only... but also</span></span> 사회 전체의 발전을 <span class="kw">저해하므로<span class="tooltip">hinder + since (formal)</span></span> 이에 대한 깊은 이해와 해결 노력이 필요하다. 차별의 유형과 사회적 영향을 분석하고 이를 해결하기 위한 방안을 살펴보고자 한다.`
+          },
+          {
+            type: "body", label: "본론 1",
+            text: `우리 사회에는 <span class="kw">성별<span class="tooltip">gender</span></span>, 나이, <span class="kw">인종<span class="tooltip">race</span></span>, 장애 등을 이유로 한 다양한 차별이 존재한다. 특히 <span class="kw">취업<span class="tooltip">employment</span></span> 과정에서의 나이 차별이나 외국인에 대한 <span class="kw">편견<span class="tooltip">prejudice, bias</span></span>은 심각한 수준이다. 또한 사회적 <span class="kw">소수자<span class="tooltip">minority</span></span>에 대한 부당한 대우도 여전히 발생하고 있다. 이러한 차별은 사회 곳곳에서 <span class="kw">만연해<span class="tooltip">to be prevalent</span></span> 있어 시급히 해결해야 할 심각한 문제라 할 수 있다.`
+          },
+          {
+            type: "body", label: "본론 2",
+            text: `이러한 차별로 인해 피해자는 <span class="kw">심리적 고통<span class="tooltip">psychological suffering</span></span>을 겪게 되며 사회적 기회를 잃게 된다. <span class="kw">더불어<span class="tooltip">moreover, along with</span></span> 사회 전체적으로도 <span class="kw">인재 활용<span class="tooltip">utilization of talent</span></span>이 어려워지고 <span class="kw">갈등<span class="tooltip">conflict</span></span>이 심화되는 문제가 발생한다. 또한 차별을 경험한 사람들이 사회에 대한 <span class="kw">불신<span class="tooltip">distrust</span></span>을 갖게 되어 사회 <span class="kw">통합<span class="tooltip">integration</span></span>을 저해하는 결과를 초래할 수 있다. 이는 국가 경쟁력의 약화로 이어질 수 있다는 점에서 매우 우려스러운 상황이다.`
+          },
+          {
+            type: "conclusion", label: "결론",
+            text: `차별을 극복하기 위해서는 <span class="kw">법적 제도<span class="tooltip">legal system</span></span>의 정비와 함께 교육을 통한 <span class="kw">인식 개선<span class="tooltip">awareness improvement</span></span>이 필요하다. 또한 개인 차원에서도 <span class="kw">다양성<span class="tooltip">diversity</span></span>을 존중하고 타인의 차이를 인정하는 태도를 갖추어야 한다. <span class="kw">결론적으로<span class="tooltip">in conclusion</span></span> 차별 없는 사회를 만들기 위해서는 <span class="kw">제도적 노력<span class="tooltip">institutional effort</span></span>과 개인의 의식 변화가 동시에 이루어져야 할 것이다.`
+          }
+        ],
+        grammars: ["-(으)ㄹ 뿐만 아니라", "-(으)므로", "더불어", "-게 되다", "결론적으로", "-아/어야 하다"]
+      },
+      {
+        exam: "96", year: "2024",
+        topic: "기업의 사회적 책임", topicEn: "Corporate Social Responsibility",
+        questions: [
+          { ko: "기업의 사회적 책임이 중요한 이유는 무엇인가?", en: "Why is corporate social responsibility important?" },
+          { ko: "기업의 사회적 책임의 구체적인 예는 무엇인가?", en: "What are specific examples of CSR?" },
+          { ko: "사회 구성원으로서 우리는 무엇을 해야 하는가?", en: "What should we do as members of society?" }
+        ],
+        sections: [
+          {
+            type: "intro", label: "서론",
+            text: `기업은 <span class="kw">이윤<span class="tooltip">profit</span></span>을 추구하는 경제적 주체일 뿐만 아니라 사회의 중요한 <span class="kw">구성원<span class="tooltip">member, constituent</span></span>이기도 하다. <span class="kw">따라서<span class="tooltip">therefore</span></span> 기업의 <span class="kw">사회적 책임<span class="tooltip">social responsibility</span></span>에 대한 논의가 점점 활발해지고 있으며, 그 중요성이 날로 커지고 있다. 기업이 사회적 책임을 다하는 것이 왜 중요한지, 그리고 우리는 무엇을 해야 하는지 살펴보고자 한다.`
+          },
+          {
+            type: "body", label: "본론 1",
+            text: `기업의 사회적 책임이 중요한 이유는 기업이 사회에 미치는 <span class="kw">영향력<span class="tooltip">influence, impact</span></span>이 매우 크기 때문이다. 기업은 <span class="kw">고용을 창출<span class="tooltip">to create employment</span></span>하고 환경에 직접적인 영향을 미치므로 이에 대한 책임을 져야 한다. 또한 기업의 <span class="kw">지속 가능한<span class="tooltip">sustainable</span></span> 성장을 위해서도 사회적 책임은 필수적이다. 사회의 신뢰를 잃은 기업은 장기적으로 <span class="kw">경쟁력<span class="tooltip">competitiveness</span></span>을 유지하기 어렵기 때문이다.`
+          },
+          {
+            type: "body", label: "본론 2",
+            text: `<span class="kw">구체적인<span class="tooltip">specific, concrete</span></span> 예로 <span class="kw">환경 보호<span class="tooltip">environmental protection</span></span> 활동, 지역 사회 발전 지원, 공정한 <span class="kw">노동 환경<span class="tooltip">working environment</span></span> 조성 등이 있다. 실제로 많은 기업이 <span class="kw">탄소 배출<span class="tooltip">carbon emissions</span></span>을 줄이거나 <span class="kw">취약 계층<span class="tooltip">vulnerable groups</span></span>을 지원하는 프로그램을 적극적으로 운영하고 있다. 이러한 활동은 기업의 <span class="kw">이미지 향상<span class="tooltip">image improvement</span></span>에도 긍정적인 영향을 미치며, 소비자의 신뢰를 높여 매출 증가로 이어지기도 한다.`
+          },
+          {
+            type: "conclusion", label: "결론",
+            text: `사회 구성원으로서 <span class="kw">소비자<span class="tooltip">consumer</span></span>는 사회적 책임을 다하는 기업의 제품을 적극적으로 선택함으로써 변화를 이끌 수 있다. 또한 기업의 활동을 <span class="kw">감시<span class="tooltip">to monitor, supervise</span></span>하고 적극적으로 의견을 제시하는 것도 중요하다. 결론적으로 기업과 소비자가 함께 노력할 때 비로소 <span class="kw">지속 가능한 사회 발전<span class="tooltip">sustainable social development</span></span>이 가능할 것이다.`
+          }
+        ],
+        grammars: ["따라서", "-기 때문에", "-(으)ㄹ 뿐만 아니라", "-(으)므로", "결론적으로", "-(으)ㄹ 것이다"]
+      },
+      {
+        exam: "95", year: "2024",
+        topic: "직장 내 개인의 자율성", topicEn: "Workplace Autonomy",
+        questions: [
+          { ko: "자율성 보장의 장점은 무엇인가?", en: "What are the advantages of workplace autonomy?" },
+          { ko: "자율성만 중시할 때 발생하는 문제는 무엇인가?", en: "What problems arise when autonomy is over-emphasized?" },
+          { ko: "올바른 방향은 무엇인가?", en: "What is the right direction?" }
+        ],
+        sections: [
+          {
+            type: "intro", label: "서론",
+            text: `최근 많은 기업에서 직원의 <span class="kw">자율성<span class="tooltip">autonomy</span></span>을 보장하는 <span class="kw">근무 방식<span class="tooltip">work style</span></span>을 도입하고 있다. 자율성은 <span class="kw">업무 만족도<span class="tooltip">job satisfaction</span></span>와 <span class="kw">생산성<span class="tooltip">productivity</span></span>을 높이는 데 긍정적인 역할을 하지만, 이를 둘러싼 다양한 논의도 존재한다. 직장 내 자율성의 장단점과 올바른 방향에 대해 살펴보고자 한다.`
+          },
+          {
+            type: "body", label: "본론 1",
+            text: `자율성이 보장될 때 직원들은 <span class="kw">창의적<span class="tooltip">creative</span></span>으로 문제를 해결할 수 있으며 업무에 대한 <span class="kw">책임감<span class="tooltip">sense of responsibility</span></span>도 자연스럽게 높아진다. 또한 <span class="kw">유연한<span class="tooltip">flexible</span></span> 근무 환경은 일과 생활의 <span class="kw">균형<span class="tooltip">balance</span></span>을 유지하는 데 큰 도움이 되며, 우수한 인재를 확보하는 데에도 유리하다. 이처럼 자율성은 개인과 조직 모두에게 긍정적인 영향을 미칠 수 있으며, 궁극적으로 조직의 <span class="kw">혁신<span class="tooltip">innovation</span></span>을 이끄는 원동력이 된다.`
+          },
+          {
+            type: "body", label: "본론 2",
+            text: `그러나 자율성만 <span class="kw">지나치게<span class="tooltip">excessively</span></span> 중시하면 조직의 <span class="kw">통일성<span class="tooltip">unity, cohesion</span></span>이 약해질 수 있다. 또한 <span class="kw">자기 관리<span class="tooltip">self-management</span></span> 능력이 부족한 직원의 경우 업무 효율이 오히려 떨어지는 문제가 발생할 수 있다. <span class="kw">의사소통<span class="tooltip">communication</span></span>의 부재로 인해 팀워크가 저하될 위험도 있다. 이처럼 자율성에는 반드시 그에 상응하는 <span class="kw">책임<span class="tooltip">responsibility</span></span>이 따라야 한다.`
+          },
+          {
+            type: "conclusion", label: "결론",
+            text: `따라서 자율성과 조직의 <span class="kw">규율<span class="tooltip">discipline</span></span> 사이에서 적절한 균형을 찾는 것이 무엇보다 중요하다. <span class="kw">명확한<span class="tooltip">clear, explicit</span></span> 목표를 설정하고 결과 중심으로 <span class="kw">평가하는<span class="tooltip">to evaluate</span></span> 체계를 도입한다면 자율성과 효율성을 함께 달성할 수 있을 것이다. 결론적으로 자율성은 적절한 <span class="kw">기준<span class="tooltip">standard, criteria</span></span>과 상호 <span class="kw">신뢰<span class="tooltip">trust</span></span>를 바탕으로 보장될 때 가장 효과적이라 할 수 있다.`
+          }
+        ],
+        grammars: ["이처럼", "그러나", "오히려", "따라서", "-(으)ㄹ 수 있다", "-(으)ㄹ 것이다"]
+      },
+      {
+        exam: "94", year: "2024",
+        topic: "문화생활의 가치", topicEn: "Value of Cultural Life",
+        questions: [
+          { ko: "문화생활의 가치는 무엇인가?", en: "What is the value of cultural activities?" },
+          { ko: "문화생활을 즐기기 쉽지 않은 이유는 무엇인가?", en: "Why is it hard to enjoy cultural life?" },
+          { ko: "정부의 정책적 지원은 어떠해야 하는가?", en: "What kind of government policy support is needed?" }
+        ],
+        sections: [
+          {
+            type: "intro", label: "서론",
+            text: `<span class="kw">문화생활<span class="tooltip">cultural life/activities</span></span>은 인간의 삶을 <span class="kw">풍요롭게<span class="tooltip">to enrich</span></span> 하는 중요한 요소이다. 그러나 바쁜 현대 사회에서 문화생활을 충분히 즐기기 어려운 현실이 있으며, 이를 개선하기 위한 사회적 차원의 노력이 필요하다. 문화생활의 가치와 이를 확대하기 위한 구체적인 방안에 대해 논의하고자 한다.`
+          },
+          {
+            type: "body", label: "본론 1",
+            text: `문화생활의 가치는 <span class="kw">정신적 풍요<span class="tooltip">spiritual/mental richness</span></span>와 삶의 질 향상에 있다. 음악, 미술, 영화 등의 문화 활동은 일상에서 <span class="kw">스트레스를 해소<span class="tooltip">to relieve stress</span></span>하고 <span class="kw">창의력<span class="tooltip">creativity</span></span>을 키우는 데 큰 도움이 된다. 또한 다양한 문화를 경험함으로써 <span class="kw">사고의 폭<span class="tooltip">breadth of thought</span></span>을 넓힐 수 있다. 이처럼 문화생활은 개인의 <span class="kw">정서적 안정<span class="tooltip">emotional stability</span></span>에도 크게 기여하며, 사회 구성원 간의 <span class="kw">소통<span class="tooltip">communication</span></span>과 상호 이해를 촉진하는 역할도 한다.`
+          },
+          {
+            type: "body", label: "본론 2",
+            text: `그러나 높은 비용과 <span class="kw">시간 부족<span class="tooltip">lack of time</span></span>으로 인해 문화생활을 충분히 즐기기 어려운 사람들이 많다. 특히 <span class="kw">경제적 여건<span class="tooltip">economic conditions</span></span>이 어려운 계층은 문화적 <span class="kw">혜택<span class="tooltip">benefit</span></span>에서 <span class="kw">소외되기<span class="tooltip">to be excluded</span></span> 쉽다. 이는 사회적 <span class="kw">불평등<span class="tooltip">inequality</span></span>을 심화시킬 수 있으며, 문화적 격차가 <span class="kw">세대 간<span class="tooltip">between generations</span></span> 갈등으로 이어질 수도 있다. 지역 간 문화 시설의 편중도 심각한 문제이다.`
+          },
+          {
+            type: "conclusion", label: "결론",
+            text: `이를 해결하기 위해 정부는 문화 시설 <span class="kw">확충<span class="tooltip">expansion</span></span>과 입장료 지원 등의 <span class="kw">정책적 노력<span class="tooltip">policy efforts</span></span>을 기울여야 한다. 또한 온라인 문화 콘텐츠의 <span class="kw">접근성<span class="tooltip">accessibility</span></span>을 높이는 것도 효과적인 방안이 될 수 있다. 결론적으로 모든 사람이 문화생활을 누릴 수 있는 환경을 <span class="kw">조성하는<span class="tooltip">to create, establish</span></span> 것이 사회 전체의 <span class="kw">삶의 질<span class="tooltip">quality of life</span></span>을 높이는 길이라고 할 수 있다.`
+          }
+        ],
+        grammars: ["-기 때문에", "그러나", "또한", "-기 위해", "결론적으로", "-아/어야 하다"]
+      },
+      {
+        exam: "93", year: "2024",
+        topic: "소비·패션 트렌드 변화", topicEn: "Consumption & Fashion Trend Changes",
+        questions: [
+          { ko: "최근 소비 및 패션 트렌드는 어떻게 변화하고 있는가?", en: "How have consumption and fashion trends changed recently?" },
+          { ko: "이러한 변화가 일어난 원인은 무엇인가?", en: "What caused these changes?" },
+          { ko: "이러한 변화가 미치는 영향은 무엇인가?", en: "What is the impact of these changes?" }
+        ],
+        sections: [
+          {
+            type: "intro", label: "서론",
+            text: `최근 <span class="kw">소비 트렌드<span class="tooltip">consumption trend</span></span>와 패션에 큰 변화가 나타나고 있다. 과거에는 고급 브랜드와 <span class="kw">격식<span class="tooltip">formality</span></span> 있는 옷차림이 중시되었으나, 현재는 <span class="kw">편안함<span class="tooltip">comfort</span></span>과 개성을 추구하는 방향으로 빠르게 바뀌고 있다. 이러한 변화의 원인과 사회적 영향에 대해 살펴보고자 한다.`
+          },
+          {
+            type: "body", label: "본론 1",
+            text: `이러한 변화의 원인으로는 먼저 <span class="kw">재택근무<span class="tooltip">remote work</span></span>의 확산을 들 수 있다. 직장에서의 복장 <span class="kw">규정<span class="tooltip">regulation</span></span>이 완화되면서 <span class="kw">캐주얼<span class="tooltip">casual</span></span>한 옷차림이 보편화되었다. 또한 <span class="kw">가치 소비<span class="tooltip">value-based consumption</span></span>에 대한 관심이 높아지면서 비싼 제품보다 자신의 가치관에 맞는 제품을 선호하는 경향이 뚜렷하게 나타나고 있다. 이와 함께 <span class="kw">환경<span class="tooltip">environment</span></span>을 고려한 <span class="kw">친환경<span class="tooltip">eco-friendly</span></span> 소비도 크게 증가하고 있는 추세이다.`
+          },
+          {
+            type: "body", label: "본론 2",
+            text: `이러한 변화는 사회 여러 방면에 큰 영향을 미치고 있다. <span class="kw">긍정적인<span class="tooltip">positive</span></span> 측면에서는 개인의 자유로운 표현이 가능해지고 <span class="kw">불필요한<span class="tooltip">unnecessary</span></span> 소비가 줄어들고 있다. 반면 전통적인 패션 산업은 <span class="kw">위기<span class="tooltip">crisis</span></span>를 겪고 있으며, 지나친 <span class="kw">개인주의<span class="tooltip">individualism</span></span>로 이어질 수 있다는 우려도 있다. 더불어 <span class="kw">유행<span class="tooltip">trend, fashion</span></span>에 지나치게 <span class="kw">민감한<span class="tooltip">sensitive</span></span> 소비 태도는 오히려 자원의 낭비를 초래할 수도 있다.`
+          },
+          {
+            type: "conclusion", label: "결론",
+            text: `결론적으로 소비와 패션 트렌드의 변화는 사회적 가치관의 변화를 반영하는 <span class="kw">자연스러운<span class="tooltip">natural</span></span> 현상이라고 할 수 있다. 중요한 것은 이러한 변화 속에서 <span class="kw">합리적인<span class="tooltip">rational</span></span> 소비 습관을 기르고 자신만의 <span class="kw">정체성<span class="tooltip">identity</span></span>을 확립하는 것이다. 우리 모두 현명한 소비자가 되기 위해 노력해야 할 것이다.`
+          }
+        ],
+        grammars: ["-(으)나", "또한", "반면", "-게 되다", "결론적으로", "-(으)ㄹ 수 있다"]
+      },
+      {
+        exam: "91", year: "2023",
+        topic: "가짜 뉴스", topicEn: "Fake News",
+        questions: [
+          { ko: "가짜 뉴스가 확산되는 원인은 무엇인가?", en: "What causes fake news to spread?" },
+          { ko: "가짜 뉴스가 사회에 미치는 피해는 무엇인가?", en: "What damage does fake news cause to society?" },
+          { ko: "가짜 뉴스 문제를 해결하기 위한 방법은 무엇인가?", en: "How can we solve the fake news problem?" }
+        ],
+        sections: [
+          {
+            type: "intro", label: "서론",
+            text: `인터넷과 <span class="kw">소셜 미디어<span class="tooltip">social media</span></span>의 발달로 정보의 유통이 빨라진 반면, <span class="kw">가짜 뉴스<span class="tooltip">fake news</span></span>의 확산이 심각한 사회 문제로 <span class="kw">대두되고 있다<span class="tooltip">has emerged as</span></span>. 가짜 뉴스는 개인과 사회 모두에 큰 피해를 주므로 이에 대한 효과적인 대책 마련이 시급한 상황이다. 가짜 뉴스의 원인과 피해, 그리고 해결 방안에 대해 살펴보고자 한다.`
+          },
+          {
+            type: "body", label: "본론 1",
+            text: `가짜 뉴스가 확산되는 원인으로는 <span class="kw">자극적인<span class="tooltip">sensational</span></span> 제목으로 <span class="kw">클릭을 유도하는<span class="tooltip">to induce clicks (clickbait)</span></span> 미디어 환경과 <span class="kw">사실 확인<span class="tooltip">fact-checking</span></span> 없이 공유하는 이용자의 태도를 들 수 있다. 또한 <span class="kw">정치적 목적<span class="tooltip">political purpose</span></span>으로 의도적으로 <span class="kw">허위 정보<span class="tooltip">false information</span></span>를 생산하는 경우도 있다. 최근에는 <span class="kw">인공지능<span class="tooltip">artificial intelligence</span></span> 기술로 더욱 정교한 가짜 뉴스가 만들어지고 있어 그 위험성이 더욱 커지고 있다.`
+          },
+          {
+            type: "body", label: "본론 2",
+            text: `가짜 뉴스는 개인의 <span class="kw">판단력<span class="tooltip">judgment</span></span>을 저해하고 사회적 <span class="kw">혼란<span class="tooltip">confusion, chaos</span></span>을 초래한다. 잘못된 의료 정보로 건강을 해치거나 <span class="kw">여론을 왜곡<span class="tooltip">to distort public opinion</span></span>하여 <span class="kw">민주주의<span class="tooltip">democracy</span></span>를 위협하는 등 그 피해는 매우 심각하다. 특히 선거 기간에는 가짜 뉴스가 유권자의 <span class="kw">판단<span class="tooltip">judgment, decision</span></span>을 흐리게 하여 공정한 선거를 방해하는 심각한 문제를 야기한다.`
+          },
+          {
+            type: "conclusion", label: "결론",
+            text: `이를 해결하기 위해서는 학교와 사회에서 <span class="kw">미디어 리터러시<span class="tooltip">media literacy</span></span> 교육을 강화하고, 허위 정보에 대한 <span class="kw">법적 규제<span class="tooltip">legal regulation</span></span>를 마련해야 한다. 또한 개인도 정보를 <span class="kw">비판적으로<span class="tooltip">critically</span></span> 판단하는 습관을 길러야 한다. 결론적으로 가짜 뉴스 문제는 정부, 미디어, 시민 모두의 적극적인 관심과 노력이 필요한 중요한 과제이다.`
+          }
+        ],
+        grammars: ["-는 반면", "또한", "-게 되다", "이를 위해", "결론적으로", "-아/어야 하다"]
+      },
+      {
+        exam: "90", year: "2023",
+        topic: "슬럼프", topicEn: "Slump & Burnout",
+        questions: [
+          { ko: "사람들이 슬럼프를 경험하는 이유는 무엇인가?", en: "Why do people experience slumps?" },
+          { ko: "슬럼프의 부정적인 영향은 무엇인가?", en: "What are the negative effects of slumps?" },
+          { ko: "슬럼프를 극복하기 위한 방법은 무엇인가?", en: "How can slumps be overcome?" }
+        ],
+        sections: [
+          {
+            type: "intro", label: "서론",
+            text: `누구나 살아가면서 한 번쯤은 <span class="kw">의욕<span class="tooltip">motivation, will</span></span>이 떨어지고 성과가 <span class="kw">정체되는<span class="tooltip">to stagnate</span></span> <span class="kw">슬럼프<span class="tooltip">slump</span></span>를 경험하게 된다. 슬럼프는 누구에게나 찾아올 수 있는 <span class="kw">자연스러운<span class="tooltip">natural</span></span> 현상이지만 이를 극복하는 방법을 아는 것이 중요하다. 슬럼프의 원인과 부정적인 영향, 그리고 효과적인 해결 방법에 대해 살펴보고자 한다.`
+          },
+          {
+            type: "body", label: "본론 1",
+            text: `사람들이 슬럼프를 경험하는 이유는 매우 다양하다. 지나친 <span class="kw">업무량<span class="tooltip">workload</span></span>으로 인한 <span class="kw">피로 누적<span class="tooltip">accumulated fatigue</span></span>, 목표 달성 후 <span class="kw">동기 부여<span class="tooltip">motivation</span></span>의 상실, 그리고 반복적인 일상에서 오는 <span class="kw">권태감<span class="tooltip">boredom, ennui</span></span> 등이 주요 원인이다. 또한 타인과의 <span class="kw">비교<span class="tooltip">comparison</span></span>에서 오는 좌절감이나 <span class="kw">완벽주의<span class="tooltip">perfectionism</span></span>적인 성격도 슬럼프를 유발하는 중요한 요인이라 할 수 있다.`
+          },
+          {
+            type: "body", label: "본론 2",
+            text: `슬럼프가 지속되면 <span class="kw">자신감<span class="tooltip">confidence</span></span>이 크게 하락하고 업무 효율이 떨어지게 된다. 더불어 <span class="kw">대인 관계<span class="tooltip">interpersonal relationships</span></span>에도 부정적인 영향을 미칠 수 있으며, 심한 경우 <span class="kw">우울증<span class="tooltip">depression</span></span>으로 이어질 위험도 있다. 슬럼프는 개인의 삶 전반에 악영향을 미치므로 이를 방치하지 않고 적극적으로 대처하는 것이 매우 중요하다.`
+          },
+          {
+            type: "conclusion", label: "결론",
+            text: `슬럼프를 극복하기 위해서는 충분한 <span class="kw">휴식<span class="tooltip">rest</span></span>을 취하고 새로운 활동을 시도하는 것이 도움이 된다. 또한 주변 사람들과 솔직하게 대화하며 감정을 나누고 필요하다면 <span class="kw">전문가<span class="tooltip">professional, expert</span></span>의 도움을 받는 것도 효과적인 방법이다. 결론적으로 슬럼프를 자연스러운 과정으로 받아들이고 <span class="kw">긍정적인 마음가짐<span class="tooltip">positive mindset</span></span>으로 대처하는 자세가 필요하다.`
+          }
+        ],
+        grammars: ["-게 되다", "더불어", "-기 위해서", "또한", "결론적으로", "-(으)ㄹ 수 있다"]
+      },
+      {
+        exam: "89", year: "2023",
+        topic: "노키즈존", topicEn: "No Kids Zones",
+        questions: [
+          { ko: "노키즈존을 찬성하는 사람들의 근거는 무엇인가?", en: "What are the reasons people support No Kids Zones?" },
+          { ko: "노키즈존으로 인해 생기는 부작용은 무엇인가?", en: "What are the side effects of No Kids Zones?" },
+          { ko: "노키즈존에 대한 자신의 생각은 무엇인가?", en: "What is your opinion on No Kids Zones?" }
+        ],
+        sections: [
+          {
+            type: "intro", label: "서론",
+            text: `최근 식당이나 카페 등에서 어린이의 출입을 제한하는 '<span class="kw">노키즈존<span class="tooltip">No Kids Zone</span></span>'이 빠르게 증가하고 있다. 이에 대해 <span class="kw">찬성<span class="tooltip">in favor, agreement</span></span>과 <span class="kw">반대<span class="tooltip">opposition</span></span> 의견이 <span class="kw">대립하고<span class="tooltip">to confront, conflict</span></span> 있으며 사회적 논의가 활발히 이루어지고 있다. 노키즈존을 둘러싼 다양한 시각을 분석하고 보다 바람직한 방향을 모색하고자 한다.`
+          },
+          {
+            type: "body", label: "본론 1",
+            text: `노키즈존을 지지하는 사람들은 다른 손님에게 <span class="kw">쾌적한<span class="tooltip">pleasant, comfortable</span></span> 환경을 제공하기 위해 반드시 필요하다고 주장한다. 실제로 어린이의 <span class="kw">소란<span class="tooltip">noise, commotion</span></span>으로 불편을 겪는 고객이 많으며, 뜨거운 음식 등으로 인한 <span class="kw">안전사고<span class="tooltip">safety accident</span></span>의 위험도 존재한다. 또한 매장 내 시설이 파손되는 경우도 빈번하게 발생하여 <span class="kw">영업주<span class="tooltip">business owner</span></span>의 경제적 부담이 갈수록 더욱 커지고 있다.`
+          },
+          {
+            type: "body", label: "본론 2",
+            text: `그러나 노키즈존은 <span class="kw">아동의 권리<span class="tooltip">children's rights</span></span>를 침해하고 가족 단위 소비자를 차별하는 심각한 문제가 있다. 또한 <span class="kw">양육자<span class="tooltip">caregiver, parent</span></span>에게 사회적 <span class="kw">고립감<span class="tooltip">sense of isolation</span></span>을 줄 수 있으며, 이는 <span class="kw">저출산<span class="tooltip">low birth rate</span></span> 문제를 더욱 악화시킬 수 있다. 어린이를 공공장소에서 배제하는 것은 <span class="kw">포용적<span class="tooltip">inclusive</span></span> 사회의 가치와는 분명히 거리가 먼 태도이다.`
+          },
+          {
+            type: "conclusion", label: "결론",
+            text: `이 문제에 대해 필자는 노키즈존보다 <span class="kw">패밀리존<span class="tooltip">Family Zone (alternative)</span></span>과 같은 <span class="kw">대안<span class="tooltip">alternative</span></span>을 적극적으로 마련하는 것이 <span class="kw">바람직하다<span class="tooltip">desirable</span></span>고 생각한다. 어린이와 다른 손님 모두가 만족할 수 있는 환경을 조성하기 위해서는 <span class="kw">사회적 합의<span class="tooltip">social consensus</span></span>와 정부의 제도적 지원이 함께 이루어져야 할 것이다.`
+          }
+        ],
+        grammars: ["그러나", "또한", "-기 위해", "-다고 생각하다", "-(으)ㄹ 수 있다", "바람직하다"]
+      },
+      {
+        exam: "88", year: "2023",
+        topic: "CCTV 설치", topicEn: "CCTV Installation",
+        questions: [
+          { ko: "CCTV 설치가 필요한 이유는 무엇인가?", en: "Why is CCTV installation necessary?" },
+          { ko: "CCTV 설치로 인해 생길 수 있는 부작용은 무엇인가?", en: "What side effects can CCTV cause?" },
+          { ko: "CCTV 설치에 대한 자신의 생각은 무엇인가?", en: "What is your opinion on CCTV?" }
+        ],
+        sections: [
+          {
+            type: "intro", label: "서론",
+            text: `<span class="kw">범죄 예방<span class="tooltip">crime prevention</span></span>과 시민의 안전을 위해 공공장소에 CCTV를 설치하는 것이 <span class="kw">보편화<span class="tooltip">to become common</span></span>되고 있다. 그러나 CCTV 설치를 둘러싸고 안전과 <span class="kw">사생활 보호<span class="tooltip">privacy protection</span></span> 사이의 논란이 끊임없이 계속되고 있다. CCTV 설치의 필요성과 부작용에 대해 다양한 관점에서 살펴보고자 한다.`
+          },
+          {
+            type: "body", label: "본론 1",
+            text: `CCTV가 필요한 가장 큰 이유는 범죄 예방과 <span class="kw">사후 증거 확보<span class="tooltip">post-incident evidence</span></span>이다. 실제로 CCTV가 설치된 지역에서는 <span class="kw">범죄율<span class="tooltip">crime rate</span></span>이 눈에 띄게 감소하는 것으로 <span class="kw">나타났으며<span class="tooltip">it was found that</span></span>, 사건 발생 시 <span class="kw">범인 검거<span class="tooltip">suspect arrest</span></span>에도 큰 도움이 된다. 또한 야간에 혼자 귀가하는 시민들에게 <span class="kw">안전감<span class="tooltip">sense of security</span></span>을 제공하는 중요한 역할도 한다.`
+          },
+          {
+            type: "body", label: "본론 2",
+            text: `반면 CCTV의 <span class="kw">무분별한<span class="tooltip">indiscriminate</span></span> 설치는 개인의 사생활을 심각하게 <span class="kw">침해<span class="tooltip">to infringe on</span></span>할 수 있다. 또한 촬영된 영상이 <span class="kw">유출<span class="tooltip">leak, disclosure</span></span>되거나 악용될 위험이 항상 있으며, <span class="kw">감시 사회<span class="tooltip">surveillance society</span></span>에 대한 우려도 존재한다. 국민의 <span class="kw">기본권<span class="tooltip">fundamental rights</span></span>이 부당하게 제한될 수 있다는 점에서 보다 신중하고 체계적인 접근이 필요하다.`
+          },
+          {
+            type: "conclusion", label: "결론",
+            text: `필자는 CCTV 설치가 확실히 필요하지만 적절한 <span class="kw">규제<span class="tooltip">regulation</span></span>가 반드시 함께 이루어져야 한다고 생각한다. 설치 장소와 목적을 명확히 제한하고 <span class="kw">영상 관리<span class="tooltip">footage management</span></span> 규정을 강화함으로써 안전과 사생활 보호의 균형을 찾아야 할 것이다. 결론적으로 CCTV는 <span class="kw">투명한<span class="tooltip">transparent</span></span> 관리 체계 속에서 운영될 때 그 가치를 발휘할 수 있다.`
+          }
+        ],
+        grammars: ["그러나", "반면", "또한", "-다고 생각하다", "-아/어야 하다", "-(으)ㄹ 것이다"]
+      }
+    ];
+
+    // ── State ──
+    let practiceMode = false;
+    let allExpanded = false;
+
+    // ── Render Essays ──
+    function renderEssays() {
+      const container = document.getElementById('essaysContainer');
+      container.innerHTML = '';
+
+      essayData.forEach((essay, idx) => {
+        const card = document.createElement('div');
+        card.className = 'essay-card' + (idx === 0 ? ' open' : '');
+        card.id = `essay-${essay.exam}`;
+
+        // Count characters (strip tooltip content first, then HTML tags)
+        const allText = essay.sections.map(s => s.text.replace(/<span class="tooltip">.*?<\/span>/g, '').replace(/<[^>]*>/g, '')).join('');
+        const charCount = allText.length;
+
+        card.innerHTML = `
+          <div class="essay-header" onclick="toggleCard(this)">
+            <div>
+              <div class="essay-meta">
+                <span class="exam-badge">${essay.exam}회 · ${essay.year}</span>
+              </div>
+              <div class="essay-topic">${essay.topic}</div>
+              <div class="essay-topic-en">${essay.topicEn}</div>
+            </div>
+            <span class="expand-icon">▼</span>
+          </div>
+          <div class="essay-body">
+            <div class="questions">
+              <div class="questions-title">§ Questions — 세부 질문</div>
+              ${essay.questions.map((q, i) => `
+                <div class="question-item">
+                  <span class="q-num">Q${i + 1}.</span>
+                  <div class="q-text">
+                    <div class="ko">${q.ko}</div>
+                    <div class="en">${q.en}</div>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+            <div class="essay-content ${practiceMode ? 'hidden' : ''}" style="position:relative;">
+              <div class="reveal-overlay">
+                <button class="reveal-btn" onclick="revealEssay(this, event)">👁 Reveal Model Essay</button>
+              </div>
+              <div class="essay-text-area">
+                ${essay.sections.map(s => `
+                  <div class="essay-section ${s.type}">
+                    <span class="section-label">${s.label}</span>
+                    <div class="essay-text">${s.text}</div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+            <div class="grammar-tags">
+              <span class="grammar-tags-label">Grammar Used:</span>
+              ${essay.grammars.map(g => `<span class="grammar-tag">${g}</span>`).join('')}
+              <span class="char-count">~${charCount}자</span>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // ── Interactions ──
+    function toggleCard(header) {
+      header.closest('.essay-card').classList.toggle('open');
+    }
+
+    function togglePracticeMode() {
+      practiceMode = !practiceMode;
+      const btn = document.getElementById('practiceToggle');
+      btn.textContent = practiceMode ? '👁 Practice Mode: ON' : '👁 Practice Mode: OFF';
+      btn.classList.toggle('active', practiceMode);
+
+      document.querySelectorAll('.essay-content').forEach(el => {
+        if (practiceMode) {
+          el.classList.add('hidden');
+        } else {
+          el.classList.remove('hidden');
+        }
+      });
+    }
+
+    function revealEssay(btn, e) {
+      e.stopPropagation();
+      btn.closest('.essay-content').classList.remove('hidden');
+    }
+
+    function toggleExpandAll() {
+      allExpanded = !allExpanded;
+      const btn = document.getElementById('expandAll');
+      btn.textContent = allExpanded ? 'Collapse All' : 'Expand All';
+      btn.classList.toggle('active', allExpanded);
+
+      document.querySelectorAll('.essay-card').forEach(card => {
+        if (allExpanded) {
+          card.classList.add('open');
+        } else {
+          card.classList.remove('open');
+        }
+      });
+    }
+
+    function toggleTemplates() {
+      const content = document.getElementById('tmplContent');
+      const toggle = document.getElementById('tmplToggle');
+      content.classList.toggle('show');
+      toggle.classList.toggle('open');
+    }
+
+    // ── Writing Pad ──
+    function updateCharCount() {
+      const textarea = document.getElementById('writingPad');
+      const countEl = document.getElementById('charCount');
+      const len = textarea.value.length;
+      countEl.textContent = len;
+      countEl.className = 'count';
+      if (len >= 600 && len <= 700) {
+        countEl.classList.add('good');
+      } else if (len > 700) {
+        countEl.classList.add('over');
+      } else if (len >= 500) {
+        countEl.classList.add('warn');
+      }
+    }
+    document.getElementById('writingPad').addEventListener('input', updateCharCount);
+
+    // ── Init ──
+    renderEssays();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOPIK II 쓰기 문법 정리 | Korean Grammar Reference</title>
+  <meta name="description" content="Comprehensive Korean grammar reference table for TOPIK II writing section (쓰기). Includes usage examples, similar grammars, and notes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #f5f0e8;
+      --bg-secondary: #ede6d8;
+      --bg-card: #faf7f2;
+      --bg-row-hover: #f0ebe0;
+      --bg-input: #fff;
+      --border-color: #d4c9b5;
+      --border-accent: #bfb19a;
+      --text-primary: #2c2416;
+      --text-secondary: #5a4e3c;
+      --text-muted: #8a7e6b;
+      --accent-blue: #4a6f8a;
+      --accent-purple: #6b5b8a;
+      --accent-pink: #96576b;
+      --accent-emerald: #4a7a5c;
+      --accent-amber: #8a6d2f;
+      --accent-rose: #8a4040;
+      --gradient-primary: linear-gradient(135deg, #5a4030 0%, #7a5a3a 50%, #4a6050 100%);
+      --gradient-header: linear-gradient(135deg, #e8dfd0 0%, #ded4c2 100%);
+      --shadow-soft: 0 2px 12px rgba(80, 60, 30, 0.08);
+      --shadow-glow: 0 1px 6px rgba(80, 60, 30, 0.04);
+      --radius-sm: 4px;
+      --radius-md: 6px;
+      --radius-lg: 8px;
+      --radius-xl: 12px;
+    }
+
+    body {
+      font-family: 'Lora', 'Noto Serif KR', 'Noto Sans KR', Georgia, serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      min-height: 100vh;
+      /* Subtle paper texture */
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 28px,
+          rgba(180, 165, 140, 0.07) 28px,
+          rgba(180, 165, 140, 0.07) 29px
+        );
+    }
+
+    /* No animated background blobs — keep it clean like a textbook */
+    body::before {
+      display: none;
+    }
+
+    /* Header Section */
+    .header {
+      padding: 48px 32px 28px;
+      text-align: center;
+      position: relative;
+    }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      max-width: 400px;
+      height: 2px;
+      background: var(--border-accent);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    /* Decorative rule ornament */
+    .header::before {
+      content: '◆';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.7rem;
+      color: var(--border-accent);
+      background: var(--bg-primary);
+      padding: 0 10px;
+      z-index: 1;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      background: transparent;
+      border: 1.5px solid var(--accent-amber);
+      border-radius: 2px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent-amber);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      font-family: 'Crimson Text', serif;
+      animation: fadeInDown 0.6s ease;
+    }
+
+    .badge::before {
+      content: '✦';
+      font-size: 0.65rem;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+      font-family: 'Crimson Text', 'Noto Serif KR', Georgia, serif;
+      animation: fadeInDown 0.6s ease 0.1s both;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+      max-width: 600px;
+      margin: 0 auto;
+      font-style: italic;
+      animation: fadeInDown 0.6s ease 0.2s both;
+    }
+
+    /* Controls Section */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 28px 32px 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: space-between;
+      animation: fadeInUp 0.6s ease 0.3s both;
+    }
+
+    .search-box {
+      position: relative;
+      flex: 1;
+      min-width: 260px;
+      max-width: 450px;
+    }
+
+    .search-box svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      color: var(--text-muted);
+      transition: color 0.3s;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 10px 14px 10px 40px;
+      background: var(--bg-input);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .search-box input::placeholder {
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .search-box input:focus {
+      border-color: var(--accent-amber);
+      box-shadow: 0 0 0 2px rgba(138, 109, 47, 0.12);
+    }
+
+    .search-box input:focus + svg,
+    .search-box input:focus ~ svg {
+      color: var(--accent-amber);
+    }
+
+    .filter-group {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 6px 14px;
+      background: transparent;
+      border: 1.5px solid var(--border-color);
+      border-radius: 2px;
+      color: var(--text-secondary);
+      font-size: 0.78rem;
+      font-family: 'Crimson Text', serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+      letter-spacing: 0.02em;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--accent-amber);
+      color: var(--accent-amber);
+      background: rgba(138, 109, 47, 0.06);
+    }
+
+    .filter-btn.active {
+      background: var(--text-primary);
+      border-color: var(--text-primary);
+      color: var(--bg-card);
+    }
+
+    .stats {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      padding: 0 8px;
+      white-space: nowrap;
+      font-style: italic;
+    }
+
+    /* Table Container */
+    .table-container {
+      max-width: 1400px;
+      margin: 0 auto 60px;
+      padding: 0 32px;
+      animation: fadeInUp 0.6s ease 0.4s both;
+    }
+
+    .table-wrapper {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border-accent) transparent;
+    }
+
+    .table-scroll::-webkit-scrollbar {
+      height: 5px;
+    }
+
+    .table-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .table-scroll::-webkit-scrollbar-thumb {
+      background: var(--border-accent);
+      border-radius: 3px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    /* Desktop: keep table scrollable for very narrow desktops */
+    @media (min-width: 769px) {
+      table {
+        min-width: 900px;
+      }
+    }
+
+    thead {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    thead th {
+      background: var(--bg-secondary);
+      padding: 14px 20px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-secondary);
+      border-bottom: 2px solid var(--border-accent);
+      white-space: nowrap;
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.2s;
+      font-family: 'Crimson Text', serif;
+    }
+
+    thead th:hover {
+      color: var(--accent-amber);
+    }
+
+    thead th .sort-icon {
+      display: inline-block;
+      margin-left: 4px;
+      opacity: 0.35;
+      font-size: 0.65rem;
+    }
+
+    thead th:first-child {
+      padding-left: 24px;
+      min-width: 60px;
+    }
+
+    tbody tr {
+      transition: background 0.2s;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      background: var(--bg-row-hover);
+    }
+
+    tbody td {
+      padding: 14px 20px;
+      font-size: 0.88rem;
+      vertical-align: top;
+      line-height: 1.7;
+    }
+
+    tbody td:first-child {
+      padding-left: 24px;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Grammar column */
+    .grammar-cell {
+      min-width: 160px;
+    }
+
+    .grammar-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      font-family: 'Noto Serif KR', 'Noto Sans KR', serif;
+      margin-bottom: 2px;
+    }
+
+    .grammar-meaning {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-style: italic;
+      font-family: 'Crimson Text', serif;
+    }
+
+    /* Example column */
+    .example-cell {
+      min-width: 280px;
+    }
+
+    .example-ko {
+      font-family: 'Noto Serif KR', 'Noto Sans KR', serif;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+      font-size: 0.88rem;
+    }
+
+    .example-ko .highlight {
+      color: var(--accent-rose);
+      font-weight: 700;
+      text-decoration: underline;
+      text-decoration-color: rgba(138, 64, 64, 0.3);
+      text-underline-offset: 2px;
+    }
+
+    .example-en {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-style: italic;
+      font-family: 'Crimson Text', serif;
+    }
+
+    /* Similar grammar column */
+    .similar-cell {
+      min-width: 180px;
+    }
+
+    .similar-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      margin: 2px 4px 2px 0;
+      background: rgba(107, 91, 138, 0.08);
+      border: 1px solid rgba(107, 91, 138, 0.2);
+      border-radius: 2px;
+      font-size: 0.76rem;
+      color: var(--accent-purple);
+      font-family: 'Noto Sans KR', sans-serif;
+      white-space: nowrap;
+    }
+
+    /* Note column */
+    .note-cell {
+      min-width: 220px;
+    }
+
+    .note-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 8px;
+      border-radius: 2px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      font-family: 'Crimson Text', serif;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .note-tag.formal {
+      background: rgba(74, 111, 138, 0.1);
+      color: var(--accent-blue);
+    }
+
+    .note-tag.caution {
+      background: rgba(138, 109, 47, 0.1);
+      color: var(--accent-amber);
+    }
+
+    .note-tag.tip {
+      background: rgba(74, 122, 92, 0.1);
+      color: var(--accent-emerald);
+    }
+
+    .note-tag.important {
+      background: rgba(138, 64, 64, 0.1);
+      color: var(--accent-rose);
+    }
+
+    .note-text {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Category badge inline */
+    .cat-badge {
+      display: inline-block;
+      padding: 1px 7px;
+      border-radius: 2px;
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+      font-family: 'Crimson Text', serif;
+    }
+
+    .cat-badge.connecting { background: rgba(74, 111, 138, 0.1); color: var(--accent-blue); }
+    .cat-badge.reason { background: rgba(138, 109, 47, 0.1); color: var(--accent-amber); }
+    .cat-badge.contrast { background: rgba(150, 87, 107, 0.1); color: var(--accent-pink); }
+    .cat-badge.opinion { background: rgba(74, 122, 92, 0.1); color: var(--accent-emerald); }
+    .cat-badge.listing { background: rgba(107, 91, 138, 0.1); color: var(--accent-purple); }
+    .cat-badge.condition { background: rgba(138, 64, 64, 0.1); color: var(--accent-rose); }
+    .cat-badge.time { background: rgba(74, 111, 138, 0.1); color: #3d6a85; }
+    .cat-badge.result { background: rgba(138, 109, 47, 0.1); color: #7a5f20; }
+    .cat-badge.addition { background: rgba(74, 122, 92, 0.1); color: #3a6a4a; }
+    .cat-badge.purpose { background: rgba(150, 87, 107, 0.1); color: #7a4555; }
+    .cat-badge.degree { background: rgba(107, 91, 138, 0.1); color: #5a4a75; }
+    .cat-badge.passive { background: rgba(138, 64, 64, 0.1); color: #7a3535; }
+    .cat-badge.quotation { background: rgba(74, 111, 138, 0.1); color: #3a6580; }
+    .cat-badge.transition { background: rgba(120, 90, 50, 0.12); color: #6b4e1f; }
+
+    /* Empty state */
+    .empty-state {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted);
+    }
+
+    .empty-state.show {
+      display: block;
+    }
+
+    .empty-state .empty-icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+    }
+
+    .empty-state p {
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 24px 32px 40px;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      font-style: italic;
+      font-family: 'Crimson Text', serif;
+    }
+
+    .footer a {
+      color: var(--accent-amber);
+      text-decoration: none;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header {
+        padding: 28px 16px 22px;
+      }
+
+      .header::after {
+        width: 50%;
+      }
+
+      .controls {
+        padding: 16px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+      }
+
+      .search-box {
+        max-width: none;
+        min-width: 0;
+      }
+
+      .filter-group {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .filter-btn {
+        padding: 6px 12px;
+        font-size: 0.72rem;
+      }
+
+      .table-container {
+        padding: 0 12px;
+      }
+
+      .table-wrapper {
+        border-radius: var(--radius-sm);
+      }
+
+      .stats {
+        text-align: center;
+        font-size: 0.75rem;
+      }
+
+      /* Card-based layout */
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      tbody tr {
+        margin: 0;
+        padding: 16px 14px;
+        border-bottom: 1px solid var(--border-color);
+        position: relative;
+      }
+
+      tbody tr:last-child {
+        border-bottom: none;
+      }
+
+      tbody td {
+        padding: 5px 0;
+        font-size: 0.86rem;
+        position: relative;
+        padding-left: 0;
+        text-align: left;
+      }
+
+      /* Hide the # column on mobile */
+      tbody td:first-child {
+        display: none;
+      }
+
+      /* Grammar cell — make it the card header */
+      tbody td.grammar-cell {
+        padding-bottom: 10px;
+        margin-bottom: 8px;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .grammar-name {
+        font-size: 1.08rem;
+      }
+
+      /* Add labels before each field */
+      tbody td.example-cell::before,
+      tbody td.similar-cell::before,
+      tbody td.note-cell::before {
+        display: block;
+        font-size: 0.62rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-muted);
+        margin-bottom: 4px;
+        font-family: 'Crimson Text', serif;
+      }
+
+      tbody td.example-cell::before {
+        content: '§ EXAMPLE';
+      }
+
+      tbody td.similar-cell::before {
+        content: '※ ALTERNATIVE';
+      }
+
+      tbody td.note-cell::before {
+        content: '† NOTE';
+      }
+
+      tbody td.example-cell {
+        padding-top: 8px;
+      }
+
+      tbody td.similar-cell {
+        padding-top: 10px;
+      }
+
+      tbody td.note-cell {
+        padding-top: 10px;
+        padding-bottom: 2px;
+      }
+
+      .grammar-cell,
+      .example-cell,
+      .similar-cell,
+      .note-cell {
+        min-width: 0;
+      }
+    }
+
+    /* Small phones */
+    @media (max-width: 400px) {
+      .header {
+        padding: 22px 12px 18px;
+      }
+      .controls {
+        padding: 12px;
+      }
+      .filter-btn {
+        padding: 5px 10px;
+        font-size: 0.68rem;
+      }
+      .table-container {
+        padding: 0 8px;
+      }
+      tbody tr {
+        padding: 14px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="badge">TOPIK II 쓰기</div>
+    <h1>Korean Grammar Reference</h1>
+    <p class="subtitle">TOPIK II 쓰기 영역에 자주 출제되는 핵심 문법을 정리한 표입니다<br>Essential grammar patterns for the TOPIK II Writing section</p>
+  </header>
+
+  <!-- Controls -->
+  <div class="controls">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="문법 검색 / Search grammar...">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/>
+      </svg>
+    </div>
+    <div class="filter-group">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="connecting">Connecting</button>
+      <button class="filter-btn" data-category="reason">Reason</button>
+      <button class="filter-btn" data-category="contrast">Contrast</button>
+      <button class="filter-btn" data-category="opinion">Opinion</button>
+      <button class="filter-btn" data-category="listing">Listing</button>
+      <button class="filter-btn" data-category="condition">Condition</button>
+      <button class="filter-btn" data-category="time">Time</button>
+      <button class="filter-btn" data-category="result">Result</button>
+      <button class="filter-btn" data-category="addition">Addition</button>
+      <button class="filter-btn" data-category="degree">Degree</button>
+      <button class="filter-btn" data-category="quotation">Quotation</button>
+      <button class="filter-btn" data-category="transition">Transition</button>
+    </div>
+    <div class="stats" id="statsDisplay">Showing all 50 grammars</div>
+  </div>
+
+  <!-- Table -->
+  <div class="table-container">
+    <div class="table-wrapper">
+      <div class="table-scroll">
+        <table id="grammarTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Grammar <span class="sort-icon">▲▼</span></th>
+              <th>Usage Example</th>
+              <th>Alternative</th>
+              <th>Note</th>
+            </tr>
+          </thead>
+          <tbody id="grammarBody">
+          </tbody>
+        </table>
+        <div class="empty-state" id="emptyState">
+          <div class="empty-icon">🔍</div>
+          <p>No matching grammars found. Try a different search term.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>TOPIK II 쓰기 문법 정리 &copy; 2026 &mdash; <a href="writing.html">Model Essays →</a> | Happy Studying! 🇰🇷</p>
+  </footer>
+
+  <script>
+    // Grammar data
+    const grammarData = [
+      // ── CONNECTING / LISTING ──
+      {
+        grammar: "-고",
+        meaning: "and, and then",
+        category: "connecting",
+        exampleKo: "한국어를 배우<span class='highlight'>고</span> 한국 문화도 이해하게 되었다.",
+        exampleEn: "I learned Korean and came to understand Korean culture too.",
+        similar: ["-며/으며", "-(으)ㄹ 뿐만 아니라"],
+        noteTag: "tip",
+        noteLabel: "Basic",
+        note: "Most basic connective. Can link sequential or simultaneous actions. Very versatile in writing."
+      },
+      {
+        grammar: "-(으)며 / -면서",
+        meaning: "while, and (simultaneous)",
+        category: "connecting",
+        exampleKo: "경제가 성장하<span class='highlight'>며</span> 환경 문제도 심각해지고 있다.",
+        exampleEn: "As the economy grows, environmental problems are also worsening.",
+        similar: ["-고", "-(으)ㄹ 뿐만 아니라"],
+        noteTag: "formal",
+        noteLabel: "Formal",
+        note: "-(으)며 is more formal/written style than -면서. Preferred in TOPIK II essays."
+      },
+      {
+        grammar: "-(으)ㄹ 뿐만 아니라",
+        meaning: "not only... but also",
+        category: "addition",
+        exampleKo: "건강에 좋<span class='highlight'>을 뿐만 아니라</span> 맛도 좋다.",
+        exampleEn: "Not only is it good for health, but it also tastes good.",
+        similar: ["-을/ㄹ 뿐 아니라", "-(으)며", "-고"],
+        noteTag: "tip",
+        noteLabel: "High Score",
+        note: "Great for adding emphasis in argumentative essays. Shows range of expression — scorers love it."
+      },
+      {
+        grammar: "-(으)ㄴ/는 반면(에)",
+        meaning: "on the other hand, whereas",
+        category: "contrast",
+        exampleKo: "도시 생활은 편리한 <span class='highlight'>반면에</span> 스트레스가 많다.",
+        exampleEn: "City life is convenient, whereas it is stressful.",
+        similar: ["-지만", "-(으)나", "-는 데 반해"],
+        noteTag: "formal",
+        noteLabel: "Formal",
+        note: "Used to contrast two opposing facts. Very useful for 쓰기 Task 54 (opinion essay)."
+      },
+      {
+        grammar: "-지만",
+        meaning: "but, however",
+        category: "contrast",
+        exampleKo: "노력을 많이 했<span class='highlight'>지만</span> 결과가 좋지 않았다.",
+        exampleEn: "I tried hard, but the result was not good.",
+        similar: ["-(으)나", "-(으)ㄴ/는데", "-는 반면(에)"],
+        noteTag: "tip",
+        noteLabel: "Common",
+        note: "Most common contrast grammar. Can be used in both spoken and written Korean."
+      },
+      {
+        grammar: "-(으)나",
+        meaning: "but, however (formal)",
+        category: "contrast",
+        exampleKo: "기술이 발전하였<span class='highlight'>으나</span> 여전히 한계가 있다.",
+        exampleEn: "Technology has advanced, however there are still limitations.",
+        similar: ["-지만", "-는 반면(에)"],
+        noteTag: "formal",
+        noteLabel: "Formal",
+        note: "More formal than -지만. Strongly recommended for TOPIK writing to sound academic."
+      },
+      // ── REASON / CAUSE ──
+      {
+        grammar: "-기 때문에",
+        meaning: "because, due to",
+        category: "reason",
+        exampleKo: "인구가 증가하<span class='highlight'>기 때문에</span> 주택 문제가 심각해지고 있다.",
+        exampleEn: "Because the population is increasing, housing problems are worsening.",
+        similar: ["-(으)므로", "-아/어서", "-(으)니까", "-는 바람에"],
+        noteTag: "tip",
+        noteLabel: "Versatile",
+        note: "Works in both written and spoken Korean. Can be used with all tenses."
+      },
+      {
+        grammar: "-(으)므로",
+        meaning: "since, because (formal)",
+        category: "reason",
+        exampleKo: "자원이 한정되어 있<span class='highlight'>으므로</span> 절약해야 한다.",
+        exampleEn: "Since resources are limited, we must conserve them.",
+        similar: ["-기 때문에", "-(으)니", "-(으)니까"],
+        noteTag: "formal",
+        noteLabel: "Formal",
+        note: "Very formal. Best for TOPIK essays and academic writing. Do NOT use with imperative/propositive endings."
+      },
+      {
+        grammar: "-아/어서",
+        meaning: "so, because",
+        category: "reason",
+        exampleKo: "준비가 부족해<span class='highlight'>서</span> 좋은 결과를 얻지 못했다.",
+        exampleEn: "Because preparation was insufficient, I couldn't get good results.",
+        similar: ["-기 때문에", "-(으)니까"],
+        noteTag: "caution",
+        noteLabel: "Restriction",
+        note: "Cannot be used with imperative (-세요) or propositive (-ㅂ시다) endings. Cannot be used with past tense -았/었-."
+      },
+      {
+        grammar: "-(으)니까",
+        meaning: "because, since",
+        category: "reason",
+        exampleKo: "경험이 많<span class='highlight'>으니까</span> 잘 할 수 있을 것이다.",
+        exampleEn: "Since you have a lot of experience, you will be able to do well.",
+        similar: ["-기 때문에", "-아/어서"],
+        noteTag: "caution",
+        noteLabel: "Caution",
+        note: "Slightly colloquial for essays. Use -(으)므로 or -기 때문에 instead for formal writing."
+      },
+      {
+        grammar: "-는 바람에",
+        meaning: "because of (unexpected negative cause)",
+        category: "reason",
+        exampleKo: "비가 갑자기 오<span class='highlight'>는 바람에</span> 행사가 취소되었다.",
+        exampleEn: "Because it suddenly rained, the event was cancelled.",
+        similar: ["-기 때문에", "-는 통에"],
+        noteTag: "important",
+        noteLabel: "Negative only",
+        note: "Only for unexpected/negative results. Cannot be used for positive outcomes or planned situations."
+      },
+      {
+        grammar: "-(으)ㄴ/는 덕분에",
+        meaning: "thanks to",
+        category: "reason",
+        exampleKo: "선생님의 도움 <span class='highlight'>덕분에</span> 시험에 합격할 수 있었다.",
+        exampleEn: "Thanks to the teacher's help, I was able to pass the exam.",
+        similar: ["-기 때문에 (positive)"],
+        noteTag: "tip",
+        noteLabel: "Positive only",
+        note: "Only for positive results. Opposite of -는 바람에. Great for expressing gratitude in essays."
+      },
+      // ── CONDITION ──
+      {
+        grammar: "-(으)면",
+        meaning: "if, when",
+        category: "condition",
+        exampleKo: "꾸준히 노력하<span class='highlight'>면</span> 목표를 달성할 수 있다.",
+        exampleEn: "If you make consistent effort, you can achieve your goal.",
+        similar: ["-다면", "-(으)ㄹ 경우"],
+        noteTag: "tip",
+        noteLabel: "Basic",
+        note: "Most basic conditional. Works in both spoken and written forms."
+      },
+      {
+        grammar: "-다면",
+        meaning: "if (hypothetical/supposition)",
+        category: "condition",
+        exampleKo: "시간이 충분하<span class='highlight'>다면</span> 더 많은 것을 경험할 수 있을 것이다.",
+        exampleEn: "If there were enough time, one could experience more things.",
+        similar: ["-(으)면", "-(으)ㄹ 경우"],
+        noteTag: "formal",
+        noteLabel: "Hypothetical",
+        note: "Emphasizes that the condition is hypothetical or uncertain. Good for opinion essays."
+      },
+      {
+        grammar: "-(으)ㄹ 경우",
+        meaning: "in the case of / in the event that",
+        category: "condition",
+        exampleKo: "문제가 발생<span class='highlight'>할 경우</span> 즉시 연락해야 한다.",
+        exampleEn: "In the event a problem occurs, one must contact immediately.",
+        similar: ["-(으)면", "-다면"],
+        noteTag: "formal",
+        noteLabel: "Formal",
+        note: "Very formal. Frequently used in official documents and academic essays."
+      },
+      {
+        grammar: "-(으)려면",
+        meaning: "if one intends to, in order to (conditional)",
+        category: "condition",
+        exampleKo: "건강을 유지하<span class='highlight'>려면</span> 규칙적으로 운동해야 한다.",
+        exampleEn: "If one intends to maintain health, one must exercise regularly.",
+        similar: ["-(으)ㄹ려고 하면"],
+        noteTag: "tip",
+        noteLabel: "Common",
+        note: "Combines intention + condition. Very natural in essay conclusions and suggestions."
+      },
+      // ── OPINION / JUDGMENT ──
+      {
+        grammar: "-(으)ㄴ/는 것 같다",
+        meaning: "it seems like, I think",
+        category: "opinion",
+        exampleKo: "환경 보호가 점점 중요해지<span class='highlight'>는 것 같다</span>.",
+        exampleEn: "It seems that environmental protection is becoming increasingly important.",
+        similar: ["-(으)ㄹ 것으로 보이다", "-다고 생각하다"],
+        noteTag: "caution",
+        noteLabel: "Soft opinion",
+        note: "Softens the statement. Can sound too casual for formal essays — consider using -(으)ㄹ 것으로 보인다."
+      },
+      {
+        grammar: "-다고 생각하다/보다",
+        meaning: "I think that...",
+        category: "opinion",
+        exampleKo: "교육이 가장 중요하<span class='highlight'>다고 생각한다</span>.",
+        exampleEn: "I think education is the most important.",
+        similar: ["-(으)ㄹ 것으로 보이다", "-다고 여기다"],
+        noteTag: "tip",
+        noteLabel: "Direct opinion",
+        note: "Direct way to express opinion. -다고 보다 is slightly more formal than -다고 생각하다."
+      },
+      {
+        grammar: "-(으)ㄹ 것으로 보이다/예상되다",
+        meaning: "it is expected that, it appears that",
+        category: "opinion",
+        exampleKo: "앞으로 더 많은 변화가 있<span class='highlight'>을 것으로 예상된다</span>.",
+        exampleEn: "More changes are expected in the future.",
+        similar: ["-다고 생각하다", "-(으)ㄹ 것 같다"],
+        noteTag: "formal",
+        noteLabel: "Academic",
+        note: "Very academic tone. Excellent for conclusion paragraphs of Task 54."
+      },
+      {
+        grammar: "-(으)ㄹ 수밖에 없다",
+        meaning: "cannot help but, have no choice but to",
+        category: "opinion",
+        exampleKo: "비용이 증가하면 가격이 오를 <span class='highlight'>수밖에 없다</span>.",
+        exampleEn: "If costs increase, prices cannot help but rise.",
+        similar: ["-지 않을 수 없다", "-게 마련이다"],
+        noteTag: "important",
+        noteLabel: "Emphasis",
+        note: "Strong assertion. Shows logical inevitability. Very effective in persuasive writing."
+      },
+      {
+        grammar: "-게 마련이다",
+        meaning: "it is natural/bound to",
+        category: "opinion",
+        exampleKo: "노력하면 성공하<span class='highlight'>게 마련이다</span>.",
+        exampleEn: "If you work hard, you are bound to succeed.",
+        similar: ["-(으)ㄹ 수밖에 없다", "-기 마련이다"],
+        noteTag: "formal",
+        noteLabel: "Proverb-like",
+        note: "Expresses something as a natural consequence or truth. Good for general statements in essays."
+      },
+      // ── LISTING / ENUMERATION ──
+      {
+        grammar: "첫째, 둘째, 셋째",
+        meaning: "first, second, third",
+        category: "listing",
+        exampleKo: "<span class='highlight'>첫째</span>, 건강에 좋다. <span class='highlight'>둘째</span>, 비용이 적게 든다.",
+        exampleEn: "First, it is good for health. Second, it costs less.",
+        similar: ["먼저/다음으로/마지막으로", "우선/그 다음에"],
+        noteTag: "tip",
+        noteLabel: "Structure",
+        note: "Essential for organizing Task 54 body paragraphs. Makes logical structure clear."
+      },
+      {
+        grammar: "-(으)ㄹ 뿐 아니라 … 도",
+        meaning: "not only... but also...",
+        category: "listing",
+        exampleKo: "시간을 절약할 <span class='highlight'>뿐 아니라</span> 비용<span class='highlight'>도</span> 줄일 수 있다.",
+        exampleEn: "Not only can it save time, but it can also reduce costs.",
+        similar: ["-(으)며", "-고", "또한"],
+        noteTag: "tip",
+        noteLabel: "High score",
+        note: "Shows advanced grammar usage. Excellent for adding multiple supporting points."
+      },
+      {
+        grammar: "또한 / 게다가 / 더불어",
+        meaning: "also / moreover / along with",
+        category: "addition",
+        exampleKo: "<span class='highlight'>또한</span> 정부의 적극적인 지원이 필요하다.",
+        exampleEn: "Moreover, active government support is needed.",
+        similar: ["뿐만 아니라", "-고", "아울러"],
+        noteTag: "formal",
+        noteLabel: "Connectors",
+        note: "또한 is most neutral, 게다가 adds emphasis, 더불어 is more formal. Use to connect paragraphs."
+      },
+      // ── TIME / SEQUENCE ──
+      {
+        grammar: "-(으)ㄴ 후(에) / -고 나서",
+        meaning: "after doing",
+        category: "time",
+        exampleKo: "대학을 졸업<span class='highlight'>한 후에</span> 취업 준비를 시작했다.",
+        exampleEn: "After graduating from university, I started preparing for employment.",
+        similar: ["-고 나서", "-(으)ㄴ 다음에", "-(으)ㄴ 뒤에"],
+        noteTag: "tip",
+        noteLabel: "Sequence",
+        note: "-(으)ㄴ 후에 is more formal than -고 나서. Good for describing processes or timelines."
+      },
+      {
+        grammar: "-(으)ㄴ/는 동안",
+        meaning: "while, during",
+        category: "time",
+        exampleKo: "학교에 다니<span class='highlight'>는 동안</span> 많은 것을 배웠다.",
+        exampleEn: "While attending school, I learned many things.",
+        similar: ["-는 사이에", "-(으)면서"],
+        noteTag: "tip",
+        noteLabel: "Duration",
+        note: "Indicates duration of time. Past: -(으)ㄴ 동안, Present: -는 동안."
+      },
+      {
+        grammar: "-자마자",
+        meaning: "as soon as",
+        category: "time",
+        exampleKo: "소식을 듣<span class='highlight'>자마자</span> 바로 출발했다.",
+        exampleEn: "As soon as I heard the news, I departed immediately.",
+        similar: ["-는 즉시", "-(으)ㄴ 직후"],
+        noteTag: "tip",
+        noteLabel: "Immediate",
+        note: "Emphasizes immediacy. The second action follows right after the first without delay."
+      },
+      {
+        grammar: "-(으)ㄹ수록",
+        meaning: "the more... the more...",
+        category: "degree",
+        exampleKo: "연습하면 할<span class='highlight'>수록</span> 실력이 향상된다.",
+        exampleEn: "The more you practice, the more your skills improve.",
+        similar: ["-면 -을수록"],
+        noteTag: "tip",
+        noteLabel: "Proportional",
+        note: "Often used with -면 pattern: V-면 V-(으)ㄹ수록. Great for showing cause-effect relationships."
+      },
+      // ── PURPOSE ──
+      {
+        grammar: "-(으)려고 / -기 위해(서)",
+        meaning: "in order to",
+        category: "purpose",
+        exampleKo: "건강을 지키<span class='highlight'>기 위해</span> 규칙적으로 운동해야 한다.",
+        exampleEn: "In order to protect one's health, one must exercise regularly.",
+        similar: ["-(으)려고", "-(으)ㄹ 목적으로", "-고자"],
+        noteTag: "formal",
+        noteLabel: "Purpose",
+        note: "-기 위해(서) is more formal than -(으)려고. -기 위해서 can be followed by any ending."
+      },
+      {
+        grammar: "-고자",
+        meaning: "intending to, wanting to (formal)",
+        category: "purpose",
+        exampleKo: "이 문제를 해결하<span class='highlight'>고자</span> 다양한 방안을 모색해야 한다.",
+        exampleEn: "Intending to solve this problem, various measures should be explored.",
+        similar: ["-(으)려고", "-기 위해(서)"],
+        noteTag: "formal",
+        noteLabel: "Very formal",
+        note: "Highly formal. Only used in written language. Perfect for TOPIK II 54번 introductions."
+      },
+      // ── RESULT / CONSEQUENCE ──
+      {
+        grammar: "-게 되다",
+        meaning: "come to, end up (change of state)",
+        category: "result",
+        exampleKo: "한국에 살면서 김치를 좋아하<span class='highlight'>게 되었다</span>.",
+        exampleEn: "While living in Korea, I came to like kimchi.",
+        similar: ["-아/어지다"],
+        noteTag: "tip",
+        noteLabel: "Change",
+        note: "Describes unintentional or gradual change. Emphasizes that the change happened naturally."
+      },
+      {
+        grammar: "-아/어지다",
+        meaning: "become (change of state)",
+        category: "result",
+        exampleKo: "기술이 발전하면서 생활이 편리해<span class='highlight'>졌다</span>.",
+        exampleEn: "As technology developed, life became convenient.",
+        similar: ["-게 되다"],
+        noteTag: "tip",
+        noteLabel: "Adjective change",
+        note: "Mainly used with adjectives. -게 되다 is used with verbs. Both indicate change."
+      },
+      {
+        grammar: "-(으)ㄴ/는 셈이다",
+        meaning: "it amounts to, practically speaking",
+        category: "result",
+        exampleKo: "매일 연습했으니 거의 전문가인 <span class='highlight'>셈이다</span>.",
+        exampleEn: "Since I practiced every day, I practically amount to an expert.",
+        similar: ["-(으)ㄴ/는 것이나 다름없다", "-는 격이다"],
+        noteTag: "tip",
+        noteLabel: "Approximation",
+        note: "Expresses that something is practically equivalent. Useful for drawing conclusions."
+      },
+      {
+        grammar: "-(으)ㄴ/는 결과",
+        meaning: "as a result of",
+        category: "result",
+        exampleKo: "조사<span class='highlight'>한 결과</span> 대부분의 사람들이 동의하는 것으로 나타났다.",
+        exampleEn: "As a result of the investigation, most people were found to agree.",
+        similar: ["그 결과", "-기 때문에"],
+        noteTag: "formal",
+        noteLabel: "Academic",
+        note: "Commonly used when citing survey results or research findings in essays."
+      },
+      // ── DEGREE / EXTENT ──
+      {
+        grammar: "-(으)ㄹ 정도로",
+        meaning: "to the extent that",
+        category: "degree",
+        exampleKo: "눈물이 나<span class='highlight'>ㄹ 정도로</span> 감동적이었다.",
+        exampleEn: "It was so moving to the extent that tears came out.",
+        similar: ["-(으)ㄹ 만큼", "-도록"],
+        noteTag: "tip",
+        noteLabel: "Emphasis",
+        note: "Emphasizes the degree or extent of something. Very vivid expression."
+      },
+      {
+        grammar: "-(으)ㄹ 만큼",
+        meaning: "as much as, to the point that",
+        category: "degree",
+        exampleKo: "혼자서도 할 수 있<span class='highlight'>을 만큼</span> 실력이 늘었다.",
+        exampleEn: "Skills improved to the point that one can do it alone.",
+        similar: ["-(으)ㄹ 정도로", "-도록"],
+        noteTag: "tip",
+        noteLabel: "Comparison",
+        note: "Can be used for both comparison and degree. Versatile in various sentence structures."
+      },
+      // ── PASSIVE / INDIRECT ──
+      {
+        grammar: "-(으)ㄴ/는 것으로 나타나다/밝혀지다",
+        meaning: "it turned out that, it was found that",
+        category: "quotation",
+        exampleKo: "조사에 따르면 80%가 찬성하<span class='highlight'>는 것으로 나타났다</span>.",
+        exampleEn: "According to the survey, it was found that 80% were in favor.",
+        similar: ["-(으)ㄴ/는 것으로 조사되다"],
+        noteTag: "formal",
+        noteLabel: "Research/Data",
+        note: "Essential for citing data, statistics, or research results. Very common in Task 53 & 54."
+      },
+      {
+        grammar: "-에 따르면 / -에 의하면",
+        meaning: "according to",
+        category: "quotation",
+        exampleKo: "최근 조사<span class='highlight'>에 따르면</span> 환경 오염이 심각한 수준이다.",
+        exampleEn: "According to a recent survey, environmental pollution is at a serious level.",
+        similar: ["-에 의하면", "-(으)ㄴ/는 바에 따르면"],
+        noteTag: "formal",
+        noteLabel: "Citation",
+        note: "Used to cite sources. -에 따르면 is more common, -에 의하면 is slightly more formal."
+      },
+      {
+        grammar: "-다고 하다 (간접 인용)",
+        meaning: "it is said that (indirect quotation)",
+        category: "quotation",
+        exampleKo: "전문가들은 운동이 중요하<span class='highlight'>다고 한다</span>.",
+        exampleEn: "Experts say that exercise is important.",
+        similar: ["-(으)ㄴ/는다고 하다", "-다고 말하다"],
+        noteTag: "tip",
+        noteLabel: "Quotation",
+        note: "Indirect quotation. Forms: V-ㄴ/는다고, A-다고, N(이)라고. Essential for citing opinions."
+      },
+      // ── ADDITIONAL IMPORTANT PATTERNS ──
+      {
+        grammar: "-는 데 (있어서)",
+        meaning: "in (doing), in the matter of",
+        category: "purpose",
+        exampleKo: "문제를 해결하<span class='highlight'>는 데</span> 많은 시간이 걸렸다.",
+        exampleEn: "It took a lot of time in solving the problem.",
+        similar: ["-기 위해", "-(으)ㄹ 때"],
+        noteTag: "caution",
+        noteLabel: "Spacing",
+        note: "데 is written separately (띄어쓰기). Do not confuse with -는데 (but/background). Common mistake!"
+      },
+      {
+        grammar: "-(으)ㄴ/는데",
+        meaning: "but / background info / soft contrast",
+        category: "connecting",
+        exampleKo: "많은 노력을 했<span class='highlight'>는데</span> 결과가 좋지 않았다.",
+        exampleEn: "I put in a lot of effort, but the results were not good.",
+        similar: ["-지만", "-(으)나"],
+        noteTag: "caution",
+        noteLabel: "Multi-use",
+        note: "Has 3 uses: contrast, background, and surprise. Written as one word unlike -는 데. Do NOT confuse!"
+      },
+      {
+        grammar: "-(으)ㄹ 필요가 있다/없다",
+        meaning: "there is (no) need to",
+        category: "opinion",
+        exampleKo: "이 문제에 대해 깊이 생각해 볼 <span class='highlight'>필요가 있다</span>.",
+        exampleEn: "There is a need to think deeply about this problem.",
+        similar: ["-아/어야 하다", "-(으)ㄹ 필요성이 있다"],
+        noteTag: "formal",
+        noteLabel: "Suggestion",
+        note: "Softer than -아/어야 하다. Good for making suggestions in conclusion paragraphs."
+      },
+      {
+        grammar: "-아/어야 하다",
+        meaning: "must, have to",
+        category: "opinion",
+        exampleKo: "환경을 보호하기 위해 노력<span class='highlight'>해야 한다</span>.",
+        exampleEn: "We must make efforts to protect the environment.",
+        similar: ["-(으)ㄹ 필요가 있다", "-아/어야 되다"],
+        noteTag: "tip",
+        noteLabel: "Obligation",
+        note: "Expresses necessity or obligation. Very common in essay conclusions for recommendations."
+      },
+      {
+        grammar: "-도록 하다",
+        meaning: "to make sure to, so that",
+        category: "purpose",
+        exampleKo: "학생들이 적극적으로 참여하<span class='highlight'>도록 해야 한다</span>.",
+        exampleEn: "We should make sure that students participate actively.",
+        similar: ["-게 하다", "-아/어야 하다"],
+        noteTag: "formal",
+        noteLabel: "Directive",
+        note: "Used for making recommendations or directives. Common in policy-related essay topics."
+      },
+      {
+        grammar: "-는 한편",
+        meaning: "while, on the one hand",
+        category: "contrast",
+        exampleKo: "개인의 노력이 필요한 <span class='highlight'>한편</span> 사회적 지원도 중요하다.",
+        exampleEn: "While individual effort is needed, social support is also important.",
+        similar: ["-(으)ㄴ/는 반면(에)", "-는 동시에"],
+        noteTag: "formal",
+        noteLabel: "Balance",
+        note: "Shows two parallel aspects. Less contrastive than -반면에, more additive. Good for balanced arguments."
+      },
+      {
+        grammar: "-(으)ㄹ 뿐이다",
+        meaning: "only, merely",
+        category: "degree",
+        exampleKo: "그것은 시작에 불과<span class='highlight'>할 뿐이다</span>.",
+        exampleEn: "That is merely the beginning.",
+        similar: ["-에 불과하다", "-기만 하다"],
+        noteTag: "important",
+        noteLabel: "Limitation",
+        note: "Emphasizes limitation or insufficiency. Useful for counter-arguments in opinion essays."
+      },
+      {
+        grammar: "-에 불과하다",
+        meaning: "to be nothing more than, merely",
+        category: "degree",
+        exampleKo: "참여율은 10%<span class='highlight'>에 불과하다</span>.",
+        exampleEn: "The participation rate is merely 10%.",
+        similar: ["-(으)ㄹ 뿐이다", "-밖에 안 되다"],
+        noteTag: "formal",
+        noteLabel: "Data emphasis",
+        note: "Often used with numbers/statistics to downplay significance. Great for data-driven arguments."
+      },
+      {
+        grammar: "-(으)ㄴ/는 점에서",
+        meaning: "in that, in the aspect that",
+        category: "opinion",
+        exampleKo: "효율성이 높다<span class='highlight'>는 점에서</span> 이 방법이 더 좋다.",
+        exampleEn: "This method is better in that its efficiency is high.",
+        similar: ["-(으)ㄴ/는 면에서", "-다는 측면에서"],
+        noteTag: "formal",
+        noteLabel: "Perspective",
+        note: "Used to specify the perspective or aspect from which you're evaluating. Academic tone."
+      },
+      {
+        grammar: "-(으)ㄴ/는/(으)ㄹ 것이다",
+        meaning: "will, is going to (written declarative)",
+        category: "opinion",
+        exampleKo: "이러한 변화는 계속될 <span class='highlight'>것이다</span>.",
+        exampleEn: "Such changes will continue.",
+        similar: ["-(으)ㄹ 것으로 보이다", "-게 될 것이다"],
+        noteTag: "formal",
+        noteLabel: "Prediction",
+        note: "Strong written-style declarative for predictions and conclusions. Core ending for TOPIK essays."
+      },
+      // ── SENTENCE CONNECTORS / TRANSITION ──
+      {
+        grammar: "그러므로 / 따라서",
+        meaning: "therefore, consequently",
+        category: "transition",
+        exampleKo: "환경 오염이 심각하다. <span class='highlight'>따라서</span> 이에 대한 대책이 시급하다.",
+        exampleEn: "Environmental pollution is serious. Therefore, countermeasures are urgent.",
+        similar: ["그래서", "그렇기 때문에", "이로 인해"],
+        noteTag: "formal",
+        noteLabel: "Conclusion",
+        note: "따라서 is more formal than 그래서. Essential for connecting cause-result paragraphs in Task 54."
+      },
+      {
+        grammar: "그러나 / 하지만",
+        meaning: "however, but",
+        category: "transition",
+        exampleKo: "기술은 편리함을 가져왔다. <span class='highlight'>그러나</span> 부작용도 무시할 수 없다.",
+        exampleEn: "Technology brought convenience. However, side effects cannot be ignored.",
+        similar: ["그렇지만", "반면에", "그런데"],
+        noteTag: "formal",
+        noteLabel: "Contrast",
+        note: "그러나 is more formal than 하지만. Use 그러나 in TOPIK essays for paragraph-level contrast."
+      },
+      {
+        grammar: "그런데",
+        meaning: "but, by the way, however",
+        category: "transition",
+        exampleKo: "열심히 준비했다. <span class='highlight'>그런데</span> 예상과 다른 결과가 나왔다.",
+        exampleEn: "I prepared hard. However, the results were different from expectations.",
+        similar: ["하지만", "그러나", "그렇지만"],
+        noteTag: "caution",
+        noteLabel: "Semi-formal",
+        note: "Less formal than 그러나. Adds a nuance of surprise or unexpected turn. Use sparingly in essays."
+      },
+      {
+        grammar: "그래서",
+        meaning: "so, therefore",
+        category: "transition",
+        exampleKo: "비가 많이 왔다. <span class='highlight'>그래서</span> 행사가 취소되었다.",
+        exampleEn: "It rained a lot. So the event was cancelled.",
+        similar: ["따라서", "그러므로", "그렇기 때문에"],
+        noteTag: "caution",
+        noteLabel: "Informal",
+        note: "Common in spoken Korean. For formal TOPIK writing, prefer 따라서 or 그러므로 instead."
+      },
+      {
+        grammar: "즉",
+        meaning: "that is, namely, in other words",
+        category: "transition",
+        exampleKo: "이 정책은 모든 시민을 대상으로 한다. <span class='highlight'>즉</span>, 누구나 혜택을 받을 수 있다.",
+        exampleEn: "This policy targets all citizens. That is, anyone can receive benefits.",
+        similar: ["다시 말해(서)", "바꿔 말하면", "곧"],
+        noteTag: "formal",
+        noteLabel: "Clarification",
+        note: "Used to rephrase or clarify the previous statement. Very academic. Great for definitions in essays."
+      },
+      {
+        grammar: "다시 말해(서)",
+        meaning: "in other words, to put it another way",
+        category: "transition",
+        exampleKo: "효율성이 높다. <span class='highlight'>다시 말해서</span> 적은 비용으로 큰 효과를 얻을 수 있다.",
+        exampleEn: "Efficiency is high. In other words, great results can be achieved at low cost.",
+        similar: ["즉", "바꿔 말하면", "달리 말하면"],
+        noteTag: "formal",
+        noteLabel: "Rephrasing",
+        note: "Used to rephrase a point more clearly. Shows writing sophistication. Use after complex statements."
+      },
+      {
+        grammar: "이처럼 / 이와 같이",
+        meaning: "like this, in this way, as such",
+        category: "transition",
+        exampleKo: "<span class='highlight'>이처럼</span> 교육은 개인과 사회 모두에 중요한 역할을 한다.",
+        exampleEn: "As such, education plays an important role for both individuals and society.",
+        similar: ["이렇게", "이런 식으로", "이러한 점에서"],
+        noteTag: "formal",
+        noteLabel: "Summary",
+        note: "Used to summarize or conclude. 이와 같이 is more formal. Great for starting conclusion paragraphs."
+      },
+      {
+        grammar: "결국",
+        meaning: "in the end, after all, ultimately",
+        category: "transition",
+        exampleKo: "<span class='highlight'>결국</span> 가장 중요한 것은 꾸준한 노력이다.",
+        exampleEn: "Ultimately, the most important thing is consistent effort.",
+        similar: ["마침내", "결과적으로", "최종적으로"],
+        noteTag: "formal",
+        noteLabel: "Final point",
+        note: "Signals a final conclusion or inevitable result. Very effective for wrapping up arguments."
+      },
+      {
+        grammar: "오히려",
+        meaning: "rather, on the contrary",
+        category: "transition",
+        exampleKo: "문제가 해결되지 않았고 <span class='highlight'>오히려</span> 더 악화되었다.",
+        exampleEn: "The problem was not solved; on the contrary, it worsened.",
+        similar: ["도리어", "반대로", "그 대신"],
+        noteTag: "important",
+        noteLabel: "Reversal",
+        note: "Indicates the opposite of what's expected. Powerful for counter-arguments and surprising turns."
+      },
+      {
+        grammar: "그럼에도 불구하고",
+        meaning: "nevertheless, despite that",
+        category: "transition",
+        exampleKo: "어려움이 많았다. <span class='highlight'>그럼에도 불구하고</span> 끝까지 포기하지 않았다.",
+        exampleEn: "There were many difficulties. Nevertheless, I did not give up until the end.",
+        similar: ["그래도", "그렇지만", "-에도 불구하고"],
+        noteTag: "formal",
+        noteLabel: "Concession",
+        note: "Very formal concession connector. Shows advanced writing ability. Highly valued in TOPIK scoring."
+      },
+      {
+        grammar: "이에 따라 / 그에 따라",
+        meaning: "accordingly, as a result",
+        category: "transition",
+        exampleKo: "인구가 감소하고 있다. <span class='highlight'>이에 따라</span> 노동력 부족 문제가 대두되고 있다.",
+        exampleEn: "The population is decreasing. Accordingly, labor shortage problems are emerging.",
+        similar: ["따라서", "그래서", "그 결과"],
+        noteTag: "formal",
+        noteLabel: "Formal result",
+        note: "More formal than 따라서. Often used in news articles and academic papers. Excellent for cause-effect."
+      },
+      {
+        grammar: "결론적으로 / 요컨대",
+        meaning: "in conclusion, in short",
+        category: "transition",
+        exampleKo: "<span class='highlight'>결론적으로</span> 교육 제도의 개선이 필요하다고 할 수 있다.",
+        exampleEn: "In conclusion, it can be said that improvement of the education system is needed.",
+        similar: ["한마디로", "간단히 말해서", "정리하자면"],
+        noteTag: "formal",
+        noteLabel: "Wrap-up",
+        note: "결론적으로 is the go-to phrase for Task 54 conclusion paragraphs. 요컨대 is more concise and academic."
+      },
+    ];
+
+    // ── Render Table ──
+    const tbody = document.getElementById('grammarBody');
+    const searchInput = document.getElementById('searchInput');
+    const statsDisplay = document.getElementById('statsDisplay');
+    const emptyState = document.getElementById('emptyState');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    let activeCategory = 'all';
+
+    function renderTable(data) {
+      tbody.innerHTML = '';
+      if (data.length === 0) {
+        emptyState.classList.add('show');
+        statsDisplay.textContent = 'No results found';
+        return;
+      }
+      emptyState.classList.remove('show');
+      statsDisplay.textContent = `Showing ${data.length} of ${grammarData.length} grammars`;
+
+      data.forEach((item, idx) => {
+        const row = document.createElement('tr');
+        row.dataset.category = item.category;
+        row.innerHTML = `
+          <td>${idx + 1}</td>
+          <td class="grammar-cell">
+            <span class="cat-badge ${item.category}">${item.category}</span>
+            <div class="grammar-name">${item.grammar}</div>
+            <div class="grammar-meaning">${item.meaning}</div>
+          </td>
+          <td class="example-cell">
+            <div class="example-ko">${item.exampleKo}</div>
+            <div class="example-en">${item.exampleEn}</div>
+          </td>
+          <td class="similar-cell">
+            ${item.similar.map(s => `<span class="similar-tag">${s}</span>`).join('')}
+          </td>
+          <td class="note-cell">
+            <div class="note-tag ${item.noteTag}">${item.noteLabel}</div>
+            <div class="note-text">${item.note}</div>
+          </td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    function filterAndSearch() {
+      const query = searchInput.value.toLowerCase().trim();
+      let filtered = grammarData;
+
+      if (activeCategory !== 'all') {
+        filtered = filtered.filter(g => g.category === activeCategory);
+      }
+
+      if (query) {
+        filtered = filtered.filter(g =>
+          g.grammar.toLowerCase().includes(query) ||
+          g.meaning.toLowerCase().includes(query) ||
+          g.note.toLowerCase().includes(query) ||
+          g.similar.some(s => s.toLowerCase().includes(query)) ||
+          g.category.toLowerCase().includes(query)
+        );
+      }
+
+      renderTable(filtered);
+    }
+
+    // Event listeners
+    searchInput.addEventListener('input', filterAndSearch);
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCategory = btn.dataset.category;
+        filterAndSearch();
+      });
+    });
+
+    // Initial render
+    renderTable(grammarData);
+  </script>
+</body>
+</html>
