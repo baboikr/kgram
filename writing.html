@@ -1286,6 +1286,9 @@
         if (row === 35 && i % WGJ_COLS === 0) c.classList.add('row-mark-over');
       });
 
+      // 원고지 punctuation set (should not start a row)
+      const isPunctuation = ch => /[。.，,!?;:·、「」『』（）\u3001\u3002\uff01\uff1f\uff0c\uff0e\uff1b\uff1a)）\]】》〉]/.test(ch);
+
       const paragraphs = text.split('\n');
       let cellIdx = 0;
       let textIdx = 0;
@@ -1307,6 +1310,14 @@
           if (cellIdx >= WGJ_TOTAL) break;
           posMap[textIdx] = cellIdx;
           const ch = para[i];
+
+          // Rule 1: Skip space that follows punctuation (. , ! ? etc.)
+          // In 원고지, the space after punctuation is not written
+          if (ch === ' ' && i > 0 && isPunctuation(para[i - 1])) {
+            textIdx++;
+            continue; // skip this space entirely, don't advance cellIdx
+          }
+
           // Arabic numerals & English letters: 2 per cell
           const isHalf = /[0-9a-zA-Z]/.test(ch);
           if (isHalf && i + 1 < para.length && /[0-9a-zA-Z]/.test(para[i + 1])) {
@@ -1316,12 +1327,30 @@
             i++;
             textIdx += 2;
           } else if (ch !== ' ') {
-            cells[cellIdx].textContent = ch;
-            textIdx++;
+            // Rule 2: Punctuation should not be at the first cell of a row
+            // If this punctuation would land on column 0, pull it back
+            // to share the previous cell with the preceding character
+            if (isPunctuation(ch) && cellIdx % WGJ_COLS === 0 && cellIdx > 0) {
+              const prevCellIdx = cellIdx - 1;
+              cells[prevCellIdx].textContent += ch;
+              cells[prevCellIdx].classList.add('digits'); // use smaller font for paired chars
+              textIdx++;
+              // Don't advance cellIdx — the punctuation was absorbed into prev cell
+            } else {
+              cells[cellIdx].textContent = ch;
+              textIdx++;
+              cellIdx++;
+            }
           } else {
-            textIdx++;
+            // Regular space: in 원고지, skip spaces at column 0
+            // (only paragraph indent should occupy the first cell)
+            if (cellIdx % WGJ_COLS === 0) {
+              textIdx++; // consume the space but don't advance cellIdx
+            } else {
+              textIdx++;
+              cellIdx++;
+            }
           }
-          cellIdx++;
         }
         posMap[textIdx] = cellIdx;
       }
