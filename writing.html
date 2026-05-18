@@ -409,6 +409,71 @@
     }
     .clear-btn:hover { border-color: var(--accent-rose); color: var(--accent-rose); }
 
+    /* ── 원고지 (Manuscript Grid) ── */
+    .wgj-wrap {
+      padding: 16px; background: #fdfcf7; overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .wgj-grid {
+      display: grid; grid-template-columns: repeat(20, 1fr);
+      border-top: 2px solid #7bab9a; border-left: 2px solid #7bab9a;
+      background: #7bab9a; gap: 1px;
+    }
+    .wgj-cell {
+      aspect-ratio: 1; background: #fdfcf7;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Noto Serif KR', serif;
+      font-size: clamp(0.6rem, 3.5vw, 1.05rem);
+      color: var(--text-primary); user-select: none;
+      line-height: 1; position: relative;
+    }
+    .wgj-cell.indent { background: #f3f0e6; }
+    .wgj-cell.digits { font-size: clamp(0.48rem, 2.6vw, 0.82rem); letter-spacing: -0.5px; }
+    .wgj-cell.cursor { background: rgba(74,111,138,0.18); outline: 2px solid var(--accent-blue); outline-offset: -1px; z-index: 1; }
+    .wgj-cell.zone-good { background: rgba(74,122,92,0.07); }
+    .wgj-cell.zone-over { background: rgba(138,64,64,0.07); }
+    .wgj-cell.row-mark-good { border-top: 2px solid var(--accent-emerald); }
+    .wgj-cell.row-mark-over { border-top: 2px solid var(--accent-rose); }
+    .wgj-zone-tag {
+      position: absolute; top: -1px; right: 2px; font-size: 0.45rem;
+      font-family: 'Crimson Text', serif; font-weight: 700;
+      letter-spacing: 0.04em; pointer-events: none;
+    }
+    .wgj-zone-tag.good { color: var(--accent-emerald); }
+    .wgj-zone-tag.over { color: var(--accent-rose); }
+    .wgj-btn {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 5px 14px; background: transparent;
+      border: 1.5px solid var(--accent-emerald); border-radius: 2px;
+      color: var(--accent-emerald); font-size: 0.75rem; font-weight: 600;
+      font-family: 'Crimson Text', serif; cursor: pointer;
+      letter-spacing: 0.04em; transition: all 0.2s;
+    }
+    .wgj-btn:hover, .wgj-btn.active { background: var(--accent-emerald); color: var(--bg-card); }
+    .wgj-panel { display: none; border-top: 1px solid var(--border-color); }
+    .wgj-panel.open { display: block; }
+    .pad-mode-btn {
+      padding: 4px 14px; background: transparent; border: 1.5px solid var(--accent-emerald);
+      border-radius: 2px; color: var(--accent-emerald); font-size: 0.72rem; font-weight: 600;
+      font-family: 'Crimson Text', serif; cursor: pointer; transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .pad-mode-btn:hover, .pad-mode-btn.active { background: var(--accent-emerald); color: var(--bg-card); }
+    .wgj-pad-container { position: relative; }
+    .wgj-hidden-input {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      opacity: 0; font-size: 16px; z-index: 2; cursor: text;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .wgj-info {
+      padding: 8px 16px; font-size: 0.68rem; color: var(--text-muted);
+      font-family: 'Crimson Text', serif; font-style: italic;
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px;
+    }
+    .wgj-info .zone-dot { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 3px; vertical-align: middle; }
+    .wgj-info .zone-dot.good { background: rgba(74,122,92,0.3); }
+    .wgj-info .zone-dot.over { background: rgba(138,64,64,0.3); }
+
     /* ── Footer ── */
     .footer {
       text-align: center; padding: 24px 32px 40px; color: var(--text-muted);
@@ -534,12 +599,29 @@
     <div class="pad-card">
       <div class="pad-header">
         <div class="pad-title">✍ Practice Writing Pad — 연습장</div>
-        <div class="pad-counter"><span class="count" id="charCount">0</span> / 600–700자</div>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+          <button class="pad-mode-btn" id="padModeBtn" onclick="togglePadMode()">📄 원고지 모드</button>
+          <div class="pad-counter"><span class="count" id="charCount">0</span> / 600–700자</div>
+        </div>
       </div>
-      <textarea class="pad-textarea" id="writingPad" placeholder="여기에 에세이를 연습해 보세요...&#10;Practice your essay here...&#10;&#10;Tip: Pick a topic above, hide the model answer, then write your own version!"></textarea>
+      <div id="padNormal">
+        <textarea class="pad-textarea" id="writingPad" placeholder="여기에 에세이를 연습해 보세요...&#10;Practice your essay here...&#10;&#10;Tip: Pick a topic above, hide the model answer, then write your own version!"></textarea>
+      </div>
+      <div id="padWongoji" style="display:none;">
+        <div class="wgj-wrap">
+          <div class="wgj-pad-container">
+            <textarea class="wgj-hidden-input" id="wongojiInput" autocomplete="off" autocorrect="off" spellcheck="false"></textarea>
+            <div class="wgj-grid" id="wongojiPadGrid"></div>
+          </div>
+          <div class="wgj-info">
+            <span><span class="zone-dot good"></span>600–700: target zone <span class="zone-dot over"></span>700+: over limit</span>
+            <span>Press Enter for new paragraph (auto-indent)</span>
+          </div>
+        </div>
+      </div>
       <div class="pad-footer">
         <span>TOPIK II 54번: 600–700자 required</span>
-        <button class="clear-btn" onclick="document.getElementById('writingPad').value=''; updateCharCount();">Clear</button>
+        <button class="clear-btn" onclick="clearPad()">Clear</button>
       </div>
     </div>
   </div>
@@ -1075,6 +1157,15 @@
                 </select>
               </div>
               <span class="listen-status" id="status-${essay.exam}"></span>
+              <button class="wgj-btn" id="wgj-btn-${essay.exam}" onclick="toggleWongojiView('${essay.exam}', event)" style="margin-left:auto;">📄 원고지</button>
+            </div>
+            <div class="wgj-panel" id="wgj-panel-${essay.exam}">
+              <div class="wgj-wrap">
+                <div class="wgj-grid" id="wgj-grid-${essay.exam}"></div>
+                <div class="wgj-info">
+                  <span><span class="zone-dot good"></span>600–700자 <span class="zone-dot over"></span>700자+</span>
+                </div>
+              </div>
             </div>
             <div class="grammar-tags">
               <span class="grammar-tags-label">Grammar Used:</span>
@@ -1150,6 +1241,182 @@
       }
     }
     document.getElementById('writingPad').addEventListener('input', updateCharCount);
+
+    // ── 원고지 (Manuscript Grid) ──
+    const WGJ_COLS = 20;
+    const WGJ_ROWS = 35;
+    const WGJ_TOTAL = WGJ_COLS * WGJ_ROWS;
+    let padWongojiMode = false;
+    let wongojiPadText = '';
+
+    function buildGridCells(gridEl) {
+      gridEl.innerHTML = '';
+      for (let i = 0; i < WGJ_TOTAL; i++) {
+        const cell = document.createElement('div');
+        cell.className = 'wgj-cell';
+        const row = Math.floor(i / WGJ_COLS);
+        if (row >= 30 && row < 35) cell.classList.add('zone-good');
+        if (row >= 35) cell.classList.add('zone-over');
+        if (row === 30 && i % WGJ_COLS === 0) {
+          cell.classList.add('row-mark-good');
+          const tag = document.createElement('span');
+          tag.className = 'wgj-zone-tag good'; tag.textContent = '600';
+          cell.appendChild(tag);
+        }
+        if (row === 35 && i % WGJ_COLS === 0) {
+          cell.classList.add('row-mark-over');
+          const tag = document.createElement('span');
+          tag.className = 'wgj-zone-tag over'; tag.textContent = '700';
+          cell.appendChild(tag);
+        }
+        gridEl.appendChild(cell);
+      }
+    }
+
+    function renderTextToGrid(text, gridEl, cursorPos) {
+      const cells = gridEl.querySelectorAll('.wgj-cell');
+      cells.forEach(c => { c.textContent = ''; c.classList.remove('indent','cursor','digits'); });
+      // Rebuild zone tags
+      cells.forEach((c, i) => {
+        const row = Math.floor(i / WGJ_COLS);
+        c.classList.remove('zone-good','zone-over','row-mark-good','row-mark-over');
+        if (row >= 30 && row < 35) c.classList.add('zone-good');
+        if (row >= 35) c.classList.add('zone-over');
+        if (row === 30 && i % WGJ_COLS === 0) c.classList.add('row-mark-good');
+        if (row === 35 && i % WGJ_COLS === 0) c.classList.add('row-mark-over');
+      });
+
+      const paragraphs = text.split('\n');
+      let cellIdx = 0;
+      let textIdx = 0;
+      const posMap = []; // textIdx → cellIdx
+
+      for (let p = 0; p < paragraphs.length; p++) {
+        if (p > 0) {
+          textIdx++; // \n
+          const col = cellIdx % WGJ_COLS;
+          if (col > 0) cellIdx = (Math.floor(cellIdx / WGJ_COLS) + 1) * WGJ_COLS;
+        }
+        // Paragraph indent
+        if (cellIdx < WGJ_TOTAL) {
+          cells[cellIdx].classList.add('indent');
+          cellIdx++;
+        }
+        const para = paragraphs[p];
+        for (let i = 0; i < para.length; i++) {
+          if (cellIdx >= WGJ_TOTAL) break;
+          posMap[textIdx] = cellIdx;
+          const ch = para[i];
+          // Arabic numerals & English letters: 2 per cell
+          const isHalf = /[0-9a-zA-Z]/.test(ch);
+          if (isHalf && i + 1 < para.length && /[0-9a-zA-Z]/.test(para[i + 1])) {
+            cells[cellIdx].textContent = ch + para[i + 1];
+            cells[cellIdx].classList.add('digits');
+            posMap[textIdx + 1] = cellIdx;
+            i++;
+            textIdx += 2;
+          } else if (ch !== ' ') {
+            cells[cellIdx].textContent = ch;
+            textIdx++;
+          } else {
+            textIdx++;
+          }
+          cellIdx++;
+        }
+        posMap[textIdx] = cellIdx;
+      }
+
+      // Show cursor
+      if (typeof cursorPos === 'number') {
+        const cIdx = posMap[cursorPos] !== undefined ? posMap[cursorPos] : cellIdx;
+        if (cIdx < WGJ_TOTAL) cells[cIdx].classList.add('cursor');
+      }
+
+      return cellIdx; // approximate char count
+    }
+
+    // ── Essay 원고지 View ──
+    function toggleWongojiView(examId, e) {
+      e && e.stopPropagation();
+      const panel = document.getElementById(`wgj-panel-${examId}`);
+      const btn = document.getElementById(`wgj-btn-${examId}`);
+      const isOpen = panel.classList.toggle('open');
+      btn.classList.toggle('active', isOpen);
+      if (isOpen) {
+        const grid = document.getElementById(`wgj-grid-${examId}`);
+        if (!grid.children.length) buildGridCells(grid);
+        const essay = essayData.find(d => d.exam === examId);
+        if (!essay) return;
+        const plainSections = essay.sections.map(s =>
+          s.text.replace(/<span class="tooltip">.*?<\/span>/g, '').replace(/<[^>]*>/g, '').trim()
+        );
+        const fullText = plainSections.join('\n');
+        renderTextToGrid(fullText, grid);
+      }
+    }
+
+    // ── Practice Pad 원고지 Mode ──
+    function togglePadMode() {
+      padWongojiMode = !padWongojiMode;
+      const btn = document.getElementById('padModeBtn');
+      const normal = document.getElementById('padNormal');
+      const wgj = document.getElementById('padWongoji');
+      btn.classList.toggle('active', padWongojiMode);
+      btn.textContent = padWongojiMode ? '📝 일반 모드' : '📄 원고지 모드';
+      normal.style.display = padWongojiMode ? 'none' : 'block';
+      wgj.style.display = padWongojiMode ? 'block' : 'none';
+      if (padWongojiMode) {
+        const grid = document.getElementById('wongojiPadGrid');
+        if (!grid.children.length) buildGridCells(grid);
+        const ta = document.getElementById('writingPad');
+        wongojiPadText = ta.value;
+        const input = document.getElementById('wongojiInput');
+        input.value = wongojiPadText;
+        syncWongojiPad();
+        input.focus();
+      } else {
+        const ta = document.getElementById('writingPad');
+        ta.value = wongojiPadText;
+        updateCharCount();
+      }
+    }
+
+    function syncWongojiPad() {
+      const input = document.getElementById('wongojiInput');
+      const grid = document.getElementById('wongojiPadGrid');
+      wongojiPadText = input.value;
+      const filled = renderTextToGrid(wongojiPadText, grid, input.selectionStart);
+      // Update char counter
+      const countEl = document.getElementById('charCount');
+      const len = wongojiPadText.replace(/\n/g, '').length;
+      countEl.textContent = len;
+      countEl.className = 'count';
+      if (len >= 600 && len <= 700) countEl.classList.add('good');
+      else if (len > 700) countEl.classList.add('over');
+      else if (len >= 500) countEl.classList.add('warn');
+    }
+
+    function clearPad() {
+      if (padWongojiMode) {
+        const input = document.getElementById('wongojiInput');
+        input.value = '';
+        wongojiPadText = '';
+        syncWongojiPad();
+        input.focus();
+      } else {
+        document.getElementById('writingPad').value = '';
+        updateCharCount();
+      }
+    }
+
+    // Wire up 원고지 input events
+    document.getElementById('wongojiInput').addEventListener('input', syncWongojiPad);
+    document.getElementById('wongojiInput').addEventListener('click', syncWongojiPad);
+    document.getElementById('wongojiInput').addEventListener('keyup', syncWongojiPad);
+    // Click grid to focus input
+    document.getElementById('wongojiPadGrid').addEventListener('click', () => {
+      if (padWongojiMode) document.getElementById('wongojiInput').focus();
+    });
 
     // ── Listen Mode (TTS) ──
     const ttsState = {}; // { examId: { utterances, currentIdx, playing, paused } }
